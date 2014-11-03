@@ -26,11 +26,11 @@ if (isset($_POST['pass'])) {
 if (isset($username) && isset($pass)) {
     $salt = "vts";
     $adapter = new mysqli("localhost", "root", "", "mindenapicpp");
-    $username=mysqli_escape_string($adapter,$username);
-    $pass=mysqli_escape_string($adapter,$pass);
-    //$result=$adapter->query("SELECT passwd FROM professors WHERE username=".$username);
-    $name= mysqli_fetch_assoc(mysqli_query($adapter, "SELECT passwd FROM professors WHERE username='$username'"));
-    if (md5($salt . $pass . $salt) ==$name['passwd']) {
+    $username = $adapter->escape_string($username);
+    $pass = $adapter->escape_string($pass);
+    $result = $adapter->query("SELECT passwd FROM professors WHERE username='$username'");
+    $name = $result->fetch_assoc();
+    if (md5($salt . $pass . $salt) == $name['passwd']) {
 
         session_start();
         $_SESSION['username'] = $username;

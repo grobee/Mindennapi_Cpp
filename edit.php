@@ -6,10 +6,8 @@
  */
 
 /* see if logged in */
-//require_once("sessionfunctions.php");
-//checkSessionAndDisplay();
-
-
+require_once("sessionfunctions.php");
+checkSessionAndDisplay();
 
 $sql = new mysqli("localhost", "root", "", "mindenapicpp");
 $id = null;

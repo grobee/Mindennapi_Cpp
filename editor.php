@@ -5,7 +5,6 @@
  * Time: 19:23
  */
 
-
 if(!isset($_GET['id']))
     header("Location: adminpanel.php");
 
