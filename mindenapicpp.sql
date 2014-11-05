@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `mindenapicpp` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE  IF NOT EXISTS `mindenapicpp` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
 USE `mindenapicpp`;
 -- MySQL dump 10.13  Distrib 5.6.17, for Win64 (x86_64)
 --
@@ -38,6 +38,7 @@ CREATE TABLE `administrators` (
 
 LOCK TABLES `administrators` WRITE;
 /*!40000 ALTER TABLE `administrators` DISABLE KEYS */;
+INSERT INTO `administrators` VALUES (2);
 /*!40000 ALTER TABLE `administrators` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,12 +79,12 @@ DROP TABLE IF EXISTS `members`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `members` (
   `id_member` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) NOT NULL,
-  `forename` varchar(25) NOT NULL,
-  `surname` varchar(25) NOT NULL,
-  `passwd` char(32) NOT NULL,
+  `username` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `forename` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `surname` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `passwd` char(32) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id_member`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -92,6 +93,7 @@ CREATE TABLE `members` (
 
 LOCK TABLES `members` WRITE;
 /*!40000 ALTER TABLE `members` DISABLE KEYS */;
+INSERT INTO `members` VALUES (2,'admin1','Birks','Tomas','e03794cf02f33dfd603a37822f95ac8d'),(3,'14415166','Istvan','Pista','88b99a31b05979c97d92e2ca41227470'),(5,'16671188','Muhamed','Asef','abdb0687d8a3ae519fafb670323d3d89');
 /*!40000 ALTER TABLE `members` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -134,7 +136,7 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id_member` int(11) NOT NULL DEFAULT '0',
-  `index_number` char(12) DEFAULT NULL,
+  `index_number` char(12) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_member`),
   UNIQUE KEY `id_member` (`id_member`),
   CONSTRAINT `fk_users_members` FOREIGN KEY (`id_member`) REFERENCES `members` (`id_member`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -147,6 +149,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (3,'14415166'),(5,'16671188');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -159,4 +162,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-11-03 23:12:12
+-- Dump completed on 2014-11-05 15:32:58
