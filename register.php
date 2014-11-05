@@ -23,11 +23,14 @@ if(isset($_POST['register'])) {
     /* insert the user into the DB */
     $sql=new mysqli("localhost", "root", "", "mindenapicpp");
     $sql->query("SET NAMES UTF8");
-    $sql->query("INSERT INTO users (forename, surname, index_number, passwd)".
-        "VALUES ('$forename', '$surname', '$index_number', '$pass');");
+    /* user insertion */
+    $sql->query("INSERT INTO members (username, forename, surname, passwd)".
+        "VALUES ('$index_number', '$forename', '$surname', '$pass')");
+
+    $sql->query("INSERT INTO users (id_member, index_number) VALUES ((SELECT id_member FROM members WHERE username = '$index_number'), '$index_number')");
 
     /* see if the insertion was successful */
-    if($sql->query("SELECT id_user FROM users WHERE index_number = '$index_number' AND passwd = '$pass';")->num_rows > 0)
+    if($sql->query("SELECT id_member FROM members WHERE username = '$index_number' AND passwd = '$pass';")->num_rows > 0)
        echo "Sikeres regisztráció!<br><br>";
     else
        echo "Sikertelen regisztráció!<br><br>";

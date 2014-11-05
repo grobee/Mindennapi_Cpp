@@ -4,6 +4,7 @@
  * @author Gulyás Róbert
  * Date: 10/26/2014
  * Time: 8:42 PM
+
  */
 
 /* This login page returns the login request to itself */
@@ -28,19 +29,26 @@ if (isset($username) && isset($pass)) {
     $adapter = new mysqli("localhost", "root", "", "mindenapicpp");
     $username = $adapter->escape_string($username);
     $pass = $adapter->escape_string($pass);
-    $result = $adapter->query("SELECT passwd FROM professors WHERE username='$username'");
-    $name = $result->fetch_assoc();
-    if (md5($salt . $pass . $salt) == $name['passwd']) {
+    $result = $adapter->query("SELECT passwd FROM members m INNER JOIN administrators a ON m.id_member = a.id_member WHERE m.username = '$username'");
+    /* see if there is a match */
+    if($result->num_rows > 0) {
+        $name = $result->fetch_assoc();
+        if (md5($salt . $pass . $salt) == $name['passwd']) {
 
-        session_start();
-        $_SESSION['username'] = $username;
+            session_start();
+            $_SESSION['username'] = $username;
 
-        $_SESSION['pass'] = md5($salt . $pass . $salt);
-        $_SESSION['session_use'] = 1;
+            $_SESSION['pass'] = md5($salt . $pass . $salt);
+            $_SESSION['session_use'] = 1;
 
-        header("Location:adminpanel.php");
+            header("Location:adminpanel.php");
 
-    } else {
+        } else {
+            echo "Hibás felhasználónév vagy jelszó\n\n\n";
+            echo "<br><br>";
+        }
+    }
+    else {
         echo "Hibás felhasználónév vagy jelszó\n\n\n";
         echo "<br><br>";
     }
