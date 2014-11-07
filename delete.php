@@ -5,13 +5,13 @@
  */
 
 require_once("sessionfunctions.php");
+require_once('dbconfig.php');
 checkSessionAndDisplay();
 
 /* if no id is given */
 if(!isset($_GET['id']) || empty($_GET['id']))
     header("Location:adminpanel.php");
 
-$sql = new mysqli("localhost", "root", "", "mindenapicpp");
 $id = $sql->escape_string($_GET['id']);
 
 /* see if the given question exists */

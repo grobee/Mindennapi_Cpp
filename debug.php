@@ -10,8 +10,8 @@ echo "<meta charset='UTF-8' />";
 
 require_once("Question.php");
 require_once("QuestionList.php");
+require_once('dbconfig.php');
 
-$mysqli = new mysqli("localhost", "root", "", "mindenapicpp");
 $qList = new Robert\QuestionList($mysqli);
 
 

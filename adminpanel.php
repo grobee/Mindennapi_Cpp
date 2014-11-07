@@ -34,8 +34,8 @@ checkSessionAndDisplay();
 
     require_once("Question.php");
     require_once("QuestionList.php");
+    require_once("dbconfig.php");
 
-    $mysqli = new mysqli("localhost", "root", "", "mindenapicpp");
     $qList = new Robert\QuestionList($mysqli);
 
     /* read the questions from db */

@@ -8,7 +8,7 @@
 echo "<meta charset='UTF-8' />";
 
 /* MySQL connection */
-$sql = new mysqli("localhost", "root", "", "mindenapicpp");
+require_once('dbconfig.php');
 
 /* define the variables and initialize */
 $question = null;

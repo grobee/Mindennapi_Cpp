@@ -26,10 +26,10 @@ if (isset($_POST['pass'])) {
 /* Check does the username password combo exist, and átírányít to the adminpanel page */
 if (isset($username) && isset($pass)) {
     $salt = "vts";
-    $adapter = new mysqli("localhost", "root", "", "mindenapicpp");
-    $username = $adapter->escape_string($username);
-    $pass = $adapter->escape_string($pass);
-    $result = $adapter->query("SELECT passwd FROM members m INNER JOIN administrators a ON m.id_member = a.id_member WHERE m.username = '$username'");
+
+    $username = $sql->escape_string($username);
+    $pass = $sql->escape_string($pass);
+    $result = $sql->query("SELECT passwd FROM members m INNER JOIN administrators a ON m.id_member = a.id_member WHERE m.username = '$username'");
     /* see if there is a match */
     if($result->num_rows > 0) {
         $name = $result->fetch_assoc();

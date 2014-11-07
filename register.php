@@ -5,6 +5,7 @@
  * Date: 11/2/2014
  * Time: 6:57 PM
  */
+require_once('dbconfig.php');
 
 if(isset($_POST['register'])) {
     if (isset($_POST['surname']))
@@ -21,7 +22,6 @@ if(isset($_POST['register'])) {
     $pass = md5($salt.$pass.$salt);
 
     /* insert the user into the DB */
-    $sql=new mysqli("localhost", "root", "", "mindenapicpp");
     $sql->query("SET NAMES UTF8");
     /* user insertion */
     $sql->query("INSERT INTO members (username, forename, surname, passwd)".

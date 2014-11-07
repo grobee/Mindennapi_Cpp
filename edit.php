@@ -7,9 +7,9 @@
 
 /* see if logged in */
 require_once("sessionfunctions.php");
+require_once('dbconfig.php');
 checkSessionAndDisplay();
 
-$sql = new mysqli("localhost", "root", "", "mindenapicpp");
 $id = null;
 /* check if the getters are set */
 if(isset($_GET['mod_question']))
