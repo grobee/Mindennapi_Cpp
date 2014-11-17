@@ -38,6 +38,14 @@ checkSessionAndDisplay();
                 <option value="4">D</option>
             </select><br/><br/>
         </div>
+        <div id="select2">
+            <span>Nehézség:</span>
+            <select name="difficulty" size=”1”>
+                <option value="easy">Könnyű</option>
+                <option value="medium">Közepes</option>
+                <option value="hard">Nehéz</option>
+            </select><br/><br/>
+        </div>
         <input type="submit" name="send" value="Küldés"/>
     </form>
     <?php

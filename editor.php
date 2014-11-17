@@ -88,6 +88,29 @@ checkSessionAndDisplay();
             ?>
         </label>
         <br /><br />
+        <label>Nehezségi szint:
+            <select name="mod_difficulty" size=”1”>
+                <option value="easy">Könnyű</option>
+                <option value="medium">Közepes</option>
+                <option value="hard">Nehéz</option>
+            </select>
+            <?php
+
+            switch($row['difficulty']){
+                case 'easy':
+                    echo "Könnyű";
+                    break;
+                case 'medium':
+                    echo "Közepes";
+                    break;
+                case 'hard':
+                    echo "Nehéz";
+                    break;
+
+            }
+
+            ?>
+        </label>
         <input type="hidden" name="mod" value="<?php echo $row['id_question'] ?>" />
         <input type="submit" value="Módosítás" />
         <input type="reset" value="Visszaállítás" />

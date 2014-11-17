@@ -17,9 +17,10 @@ class Question
     private $answer3;
     private $answer4;
     private $correctAnswer;
+    private $difficulty;
 
     /* constructor, create a question */
-    public function __construct($id, $question, $ans1, $ans2, $ans3, $ans4, $correctAnswer)
+    public function __construct($id, $question, $ans1, $ans2, $ans3, $ans4, $correctAnswer,$diff)
     {
         /* question attributes */
         $this->id = $id;
@@ -29,6 +30,7 @@ class Question
         $this->answer3 = $ans3;
         $this->answer4 = $ans4;
         $this->correctAnswer = $correctAnswer;
+        $this->difficulty=$diff;
     }
 
     /* get the question id */
@@ -49,5 +51,12 @@ class Question
     /* get the correct answer */
     public function getCorrectAnswer(){
         return $this->correctAnswer;
+    }
+
+
+    /* get the difficulty of the question */
+    public function getDifficulty()
+    {
+        return $this->difficulty;
     }
 }

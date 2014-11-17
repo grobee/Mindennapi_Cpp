@@ -24,6 +24,8 @@ if(isset($_GET['mod_answer4']))
     $mod_answer4 = $sql->escape_string($_GET['mod_answer4']);
 if(isset($_GET['mod_correct_answer']))
     $mod_correct_answer = $sql->escape_string($_GET['mod_correct_answer']);
+if(isset($_GET['mod_correct_answer']))
+    $mod_difficulty = $sql->escape_string($_GET['mod_difficulty']);
 if(isset($_GET['mod']))
     $id = $sql->escape_string($_GET['mod']);
 

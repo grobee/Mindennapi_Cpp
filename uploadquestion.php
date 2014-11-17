@@ -17,6 +17,7 @@ $ans2 = null;
 $ans3 = null;
 $ans4 = null;
 $corrans = null;
+$diff=null;
 
 /* get the values from the GET method */
 if (isset($_GET["question"]))
@@ -31,6 +32,8 @@ if (isset($_GET["answer4"]))
     $ans4 = $sql->escape_string($_GET["answer4"]);
 if (isset($_GET["correct_answer"]))
     $corrans = $sql->escape_string($_GET["correct_answer"]);
+if (isset($_GET["difficulty"]))
+    $diff=$sql->escape_string($_GET["difficulty"]);
 
 /* determine the correct answer */
 switch($corrans){
@@ -50,8 +53,8 @@ switch($corrans){
 
 /* insert the question into the DB */
 $sql->query("SET NAMES UTF8");
-$sql->query("INSERT INTO questions (question, answer_1, answer_2, answer_3, answer_4, correct_answer)".
-    "VALUES ('$question', '$ans1', '$ans2', '$ans3', '$ans4', '$corrans');");
+$sql->query("INSERT INTO questions (question, answer_1, answer_2, answer_3, answer_4, correct_answer,difficulty)".
+    "VALUES ('$question', '$ans1', '$ans2', '$ans3', '$ans4', '$corrans','$diff');");
 
 /* see if the insertion was successful */
 if($sql->query("SELECT id_question FROM questions WHERE question = '$question' AND correct_answer = '$corrans';")->num_rows > 0)
