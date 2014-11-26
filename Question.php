@@ -1,26 +1,19 @@
 <?php
 
-/**
- * Class Question
- * @author Birkás Tamás
- * @author Gulyás Róbert
- * Date: 10/18/2014
- * Time: 7:29 PM
- */
 class Question
 {
     /* Question class which contains the data from the db for a later use */
-    private $id;
-    private $question;
-    private $answer1;
-    private $answer2;
-    private $answer3;
-    private $answer4;
-    private $correctAnswer;
-    private $difficulty;
+    public $id;
+    public $question;
+    public $answer1;
+    public $answer2;
+    public $answer3;
+    public $answer4;
+    public $correctAnswer;
+	public $difficulty;
 
     /* constructor, create a question */
-    public function __construct($id, $question, $ans1, $ans2, $ans3, $ans4, $correctAnswer,$diff)
+    public function __construct($id = null, $question = null, $ans1 = null, $ans2 = null, $ans3 = null, $ans4 = null, $correctAnswer = null, $diff = null)
     {
         /* question attributes */
         $this->id = $id;
@@ -30,33 +23,6 @@ class Question
         $this->answer3 = $ans3;
         $this->answer4 = $ans4;
         $this->correctAnswer = $correctAnswer;
-        $this->difficulty=$diff;
-    }
-
-    /* get the question id */
-    public function getId(){
-        return $this->id;
-    }
-
-    /* get the given question's text */
-    public function getQuestion(){
-        return $this->question;
-    }
-
-    /* return the answer array */
-    public function getAnswers(){
-        return [$this->answer1, $this->answer2,  $this->answer3, $this->answer4];
-    }
-
-    /* get the correct answer */
-    public function getCorrectAnswer(){
-        return $this->correctAnswer;
-    }
-
-
-    /* get the difficulty of the question */
-    public function getDifficulty()
-    {
-        return $this->difficulty;
+		$this->difficulty = $diff;
     }
 }

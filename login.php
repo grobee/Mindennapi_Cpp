@@ -8,13 +8,9 @@
  */
 
 /* This login page returns the login request to itself */
+require_once('dbconfig.php');
 
 /* Check does the user already logged in */
-
-require_once("dbconfig.php");
-
-
-
 session_start();
 if (isset($_SESSION["session_use"]))
     if ($_SESSION["session_use"] == 1)
@@ -32,9 +28,9 @@ if (isset($_POST['pass'])) {
 if (isset($username) && isset($pass)) {
     $salt = "vts";
 
-    $username = $mysqli->escape_string($username);
-    $pass = $mysqli->escape_string($pass);
-    $result = $mysqli->query("SELECT passwd FROM members m INNER JOIN administrators a ON m.id_member = a.id_member WHERE m.username = '$username'");
+    $username = $sql->escape_string($username);
+    $pass = $sql->escape_string($pass);
+    $result = $sql->query("SELECT passwd FROM members m INNER JOIN administrators a ON m.id_member = a.id_member WHERE m.username = '$username'");
     /* see if there is a match */
     if($result->num_rows > 0) {
         $name = $result->fetch_assoc();

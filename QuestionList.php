@@ -34,7 +34,7 @@ class QuestionList {
         $i = 0;
 
         while($row = $result->fetch_assoc()){
-            $this->questions[$i] = new Question($row['id_question'], $row['question'], $row['answer_1'], $row['answer_2'], $row['answer_3'], $row['answer_4'], $row['correct_answer'],$row['difficulty']);
+            $this->questions[$i] = new Question($row['id_question'], $row['question'], $row['answer_1'], $row['answer_2'], $row['answer_3'], $row['answer_4'], $row['correct_answer'], $row['difficulty']);
             $i++;
         }
     }

@@ -36,8 +36,7 @@ checkSessionAndDisplay();
     $qList = new Robert\QuestionList($mysqli);
 
     /* read the questions from db */
-    $qList->populate();
-    $qArray = $qList->getQuestions();
+    $qList->populate();    
     /* var_dump($qArray); */
 
     /* tablazat */
@@ -47,12 +46,12 @@ checkSessionAndDisplay();
     echo "</thead>";
 
     /**@var Question $question */
-    foreach ($qArray as $question) {
+    foreach ($qList->getQuestions() as $question) {
         echo "<tr>";
-        echo "<td>" . $question->getQuestion() . "</td><td>" . $question->getAnswers()[0] . "</td><td>" . $question->getAnswers()[1] . "</td>
-        <td>" . $question->getAnswers()[2] . "</td><td>" . $question->getAnswers()[3] . "</td><td>" . $question->getCorrectAnswer() . "</td><td>" . $question->getDifficulty() . "</td>
-        <td><a href='delete.php?id=".$question->getId()."'>X</a></td>
-        <td><a href='editor.php?id=".$question->getId()."'>Módosítás</a>";
+        echo "<td>" . $question->question . "</td><td>" . $question->answer1 . "</td><td>" . $question->answer2 . "</td>
+        <td>" . $question->answer3 . "</td><td>" . $question->answer4 . "</td><td>" . $question->correctAnswer . "</td><td>" . $question->difficulty . "</td>
+        <td><a href='delete.php?id=".$question->id."'>X</a></td>
+        <td><a href='editor.php?id=".$question->id."'>Módosítás</a>";
         echo "</tr>";
     }
 
