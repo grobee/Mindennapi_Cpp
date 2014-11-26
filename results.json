@@ -1,0 +1,12 @@
+[
+    {
+        "id_question": "3",
+        "question": "Mi a foglalkoz\u00e1sod?",
+        "answer_1": "Informatikus",
+        "answer_2": "Tan\u00edt\u00f3",
+        "answer_3": "Pap",
+        "answer_4": "Szerel\u0151",
+        "correct_answer": "Informatikus",
+        "difficulty": "easy"
+    }
+]
