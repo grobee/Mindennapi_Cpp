@@ -1,0 +1,52 @@
+.text_input {
+    border-bottom: 1px solid #286C2B;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+}
+
+#editor_form table {
+    margin: auto;
+}
+
+.css_select select{
+    background: #286C2B;
+    width: 55px;
+    padding: 5px;
+    font-size: 14px;
+    line-height: 1;
+    color: #fff;
+    border: 0;
+    border-radius: 0;
+    height: 34px;
+}
+
+.css_select {
+    width: 55px;
+    height: 34px;
+    overflow: hidden;
+    background: #286C2B;
+    border: 0;
+    text-align: center;
+}
+
+.input_button {
+    background-color: #286C2B;
+    border: 0;
+    color: #fff;
+    padding: 10px 25px 10px 25px;
+    cursor: pointer;
+}
+
+#mod_difficulty {
+    width: 95px;
+}
+
+#diff_select_div {
+    width: 95px;
+}
+
+#input_buttons_tr {
+    background-color: #286C2B;
+    color: #fff;
+}

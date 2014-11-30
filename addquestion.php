@@ -1,24 +1,123 @@
+<?php require_once("sessionfunctions.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title></title>
+    <title>Új kérdés bevitele</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css" />
+    <link rel="stylesheet" type="text/css" href="style/addquestion.css" />
 </head>
 <body>
-<div id="top"><b>Mindennapi C++</b></div>
-<?php
-require_once("sessionfunctions.php");
-checkSessionAndDisplay();
-?>
-<br/><br/>
-
-<div id="center">
-    <form name="question_form" method="get" action="uploadquestion.php">
-        <div id="question">
-            <label>Kérdés:
-            <input type="text" name="question"/></label>
-            <br/><br/>
+<?php checkSessionAndDisplay(); ?>
+<div id="container">
+    <!-- HEADER -->
+    <div id="header">
+        <div id="innerheader" class="sitecenter">
+            <img src="images/logo_small.png" width="100" height="75" alt="logo" />
+            <a href="adminpanel.php"> Kérdések </a>
+            <a href=""> Elérhetőség </a>
         </div>
+    </div>
+
+    <!-- BODY -->
+    <div id="site_content">
+        <p>
+            Az alábbi oldal segítségével az adatbázisban már megtalálható kérdések módosíthatóak.
+        </p>
+
+        <div id="question_form">
+            <form name="question_form" method="get" action="uploadquestion.php">
+                <table cellpadding="5" cellspacing="5">
+                    <!-- FIRST ROW -->
+                    <tr>
+                        <td align="right"><label for="text_input1">Kérdés</label></td>
+                        <td><input class="text_input" type="text" name="question"/></label></td>
+                    </tr>
+                    <!-- SECOND ROW -->
+                    <tr>
+                        <td align="right"><label for="text_input2">Első válasz</label></td>
+                        <td><input class="text_input" type="text" name="answer1"/></td>
+                    </tr>
+                    <!-- THIRD ROW -->
+                    <tr>
+                        <td align="right"><label for="text_input3">Második válasz</label></td>
+                        <td><input class="text_input" type="text" name="answer2"/></td>
+                    </tr>
+                    <!-- FOURTH ROW -->
+                    <tr>
+                        <td align="right"><label for="text_input4">Harmadik válasz</label></td>
+                        <td><input class="text_input" type="text" name="answer3"/></td>
+                    </tr>
+                    <!-- FIFTH ROW -->
+                    <tr>
+                        <td align="right"><label for="text_input5">Negyedik válasz</label></td>
+                        <td><input class="text_input" type="text" name="answer4"/></td>
+                    </tr>
+                    <!-- SIXTH ROW -->
+                    <tr>
+                        <td align="right"><label for="correct_answer">Helyes válasz</label></td>
+                        <td align="center">
+                            <div class="css_select">
+                                <select id="correct_answer" name="correct_answer" size=”1”>
+                                    <option value="<?php echo $question->answer1; ?>">A</option>
+                                    <option value="<?php echo $question->answer2; ?>">B</option>
+                                    <option value="<?php echo $question->answer3; ?>">C</option>
+                                    <option value="<?php echo $question->answer4; ?>">D</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- SEVENTH ROW -->
+                    <tr>
+                        <td align="right"><label>Nehezségi szint</label></td>
+                        <td align="center">
+                            <div id="diff_select_div" class="css_select">
+                                <select id="difficulty" name="difficulty" size=”1”>
+                                    <option value="easy">Könnyű</option>
+                                    <option value="medium">Közepes</option>
+                                    <option value="hard">Nehéz</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- EIGHT ROW -->
+                    <tr id="input_buttons_tr">
+                        <td colspan="2" align="center">
+                            <input class="input_button" type="submit" value="Elküldés" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <?php
+
+            /* see if any statement was sent to this page through the GET method */
+            if(isset($_GET['success'])){
+                switch($_GET['success']){
+                    case 'true':
+                        echo "<div id='failure'>A kérdésbevitel sikeres volt.</div>\n";
+                        break;
+
+                    case 'false:':
+                        echo "<div id='failure'>A kérdésbevitel sikertelen volt.</div>\n";
+                        break;
+                }
+            }
+
+            ?>
+        </div>
+    </div>
+    <!-- SITE CONTENT END -->
+</div>
+<div id="footer">
+    <div id="innerfooter">Copyright @ 2014<br /><i>Group 3 TEAM</i></div>
+</div>
+</body>
+</html>
+
+
+<!-- <div id="center">
+
+
 
         <label>Válasz 1: <input type="text" name="answer1"/></label>
         <br/><br/>
@@ -48,22 +147,3 @@ checkSessionAndDisplay();
         </div>
         <input type="submit" name="send" value="Küldés"/>
     </form>
-    <?php
-
-    /* see if any statement was sent to this page through the GET method */
-    if(isset($_GET['success'])){
-        switch($_GET['success']){
-            case 'true':
-                echo "<div id='success'>A kérdésbevitel sikeres volt.</div>\n";
-                break;
-
-            case 'false:':
-                echo "<div id='failure'>A kérdésbevitel sikertelen volt.</div>\n";
-                break;
-        }
-    }
-
-    ?>
-</div>
-</body>
-</html>
