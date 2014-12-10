@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Új kérdés bevitele</title>
-    <link rel="stylesheet" type="text/css" href="style/style.css" />
-    <link rel="stylesheet" type="text/css" href="style/addquestion.css" />
+    <link rel="stylesheet" type="text/css" href="style/style.css"/>
+    <link rel="stylesheet" type="text/css" href="style/addquestion.css"/>
 </head>
 <body>
 <?php checkSessionAndDisplay(); ?>
@@ -13,7 +13,7 @@
     <!-- HEADER -->
     <div id="header">
         <div id="innerheader" class="sitecenter">
-            <img src="images/logo_small.png" width="100" height="75" alt="logo" />
+            <img src="images/logo_small.png" width="100" height="75" alt="logo"/>
             <a href="adminpanel.php"> Kérdések </a>
             <a href=""> Elérhetőség </a>
         </div>
@@ -22,7 +22,7 @@
     <!-- BODY -->
     <div id="site_content">
         <p>
-            Az alábbi oldal segítségével az adatbázisban már megtalálható kérdések módosíthatóak.
+            Az alábbi oldal segítségével új kérdések tölthetőek fel az adatbázisba
         </p>
 
         <div id="question_form">
@@ -59,10 +59,10 @@
                         <td align="center">
                             <div class="css_select">
                                 <select id="correct_answer" name="correct_answer" size=”1”>
-                                    <option value="<?php echo $question->answer1; ?>">A</option>
-                                    <option value="<?php echo $question->answer2; ?>">B</option>
-                                    <option value="<?php echo $question->answer3; ?>">C</option>
-                                    <option value="<?php echo $question->answer4; ?>">D</option>
+                                    <option value="v1">A</option>
+                                    <option value="v2">B</option>
+                                    <option value="v3">C</option>
+                                    <option value="v4">D</option>
                                 </select>
                             </div>
                         </td>
@@ -83,7 +83,7 @@
                     <!-- EIGHT ROW -->
                     <tr id="input_buttons_tr">
                         <td colspan="2" align="center">
-                            <input class="input_button" type="submit" value="Elküldés" />
+                            <input class="input_button" type="submit" value="Elküldés"/>
                         </td>
                     </tr>
                 </table>
@@ -91,13 +91,13 @@
             <?php
 
             /* see if any statement was sent to this page through the GET method */
-            if(isset($_GET['success'])){
-                switch($_GET['success']){
-                    case 'true':
+            if (isset($_GET['success'])) {
+                switch ($_GET['success']) {
+                    case "true":
                         echo "<div id='failure'>A kérdésbevitel sikeres volt.</div>\n";
                         break;
 
-                    case 'false:':
+                    case "false":
                         echo "<div id='failure'>A kérdésbevitel sikertelen volt.</div>\n";
                         break;
                 }
@@ -109,7 +109,7 @@
     <!-- SITE CONTENT END -->
 </div>
 <div id="footer">
-    <div id="innerfooter">Copyright @ 2014<br /><i>Group 3 TEAM</i></div>
+    <div id="innerfooter">Copyright @ 2014<br/><i>Group 3 TEAM</i></div>
 </div>
 </body>
 </html>

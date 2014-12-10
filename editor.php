@@ -75,31 +75,33 @@ $question = new Question($row['id_question'], $row['question'], $row['answer_1']
                         <td align="right"><label for="mod_correct_answer">Helyes válasz</label></td>
                         <td align="center">
                             <div class="css_select">
+                                <?php
+                                $select_a="<option value=\"A\">A</option>";
+                                $select_b="<option value=\"B\">B</option>";
+                                $select_c="<option value=\"C\">C</option>";
+                                $select_d="<option value=\"D\">D</option>";
+                                switch($question->correctAnswer){
+                                    case $question->answer1:
+                                        $select_a="<option selected=\"selected\" value=\"A\">A</option>";
+                                        break;
+                                    case $question->answer2:
+                                        $select_b="<option selected=\"selected\" value=\"B\">B</option>";
+                                        break;
+                                    case $question->answer3:
+                                        $select_c="<option selected=\"selected\" value=\"C\">C</option>";
+                                        break;
+                                    case $question->answer4:
+                                        $select_d="<option selected=\"selected\" value=\"D\">D</option>";
+                                        break;
+                                }
+                                ?>
                                 <select id="mod_correct_answer" name="mod_correct_answer" size=”1”>
-                                    <option value="<?php echo $question->answer1; ?>">A</option>
-                                    <option value="<?php echo $question->answer2; ?>">B</option>
-                                    <option value="<?php echo $question->answer3; ?>">C</option>
-                                    <option value="<?php echo $question->answer4; ?>">D</option>
+                                    <?php
+                                    echo $select_a.$select_b.$select_c.$select_d;
+                                    ?>
                                 </select>
                             </div>
-                            <?php
 
-                            switch($question->correctAnswer){
-                                case $question->answer1:
-                                    echo "A";
-                                    break;
-                                case $question->answer2:
-                                    echo "B";
-                                    break;
-                                case $question->answer3:
-                                    echo "C";
-                                    break;
-                                case $question->answer4:
-                                    echo "D";
-                                    break;
-                            }
-
-                            ?>
                         </td>
                     </tr>
                     <!-- SEVENTH ROW -->
@@ -107,27 +109,30 @@ $question = new Question($row['id_question'], $row['question'], $row['answer_1']
                         <td align="right"><label>Nehezségi szint</label></td>
                         <td align="center">
                             <div id="diff_select_div" class="css_select">
+                                <?php
+                                $select_easy="<option value=\"easy\">Könnyű</option>";
+                                $select_medium="<option value=\"medium\">Közepes</option>";
+                                $select_hard="<option value=\"hard\">Nehéz</option>";
+                                switch($question->difficulty){
+                                    case 'easy':
+                                        $select_easy="<option selected=\"selected\" value=\"easy\">Könnyű</option>";
+                                        break;
+                                    case 'medium':
+                                        $select_medium="<option selected=\"selected\" value=\"medium\">Közepes</option>";
+                                        break;
+                                    case 'hard':
+                                        $select_hard="<option  selected=\"selected\" value=\"hard\">Nehéz</option>";
+                                        break;
+                                }
+
+                                ?>
                                 <select id="mod_difficulty" name="mod_difficulty" size=”1”>
-                                    <option value="easy">Könnyű</option>
-                                    <option value="medium">Közepes</option>
-                                    <option value="hard">Nehéz</option>
+                                    <?php
+                                    echo $select_easy.$select_medium.$select_hard;
+                                    ?>
                                 </select>
                             </div>
-                            <?php
 
-                            switch($question->difficulty){
-                                case 'easy':
-                                    echo "Könnyű";
-                                    break;
-                                case 'medium':
-                                    echo "Közepes";
-                                    break;
-                                case 'hard':
-                                    echo "Nehéz";
-                                    break;
-                            }
-
-                            ?>
                         </td>
                     </tr>
                     <!-- EIGHT ROW -->
@@ -139,6 +144,22 @@ $question = new Question($row['id_question'], $row['question'], $row['answer_1']
                 </table>
                 <input type="hidden" name="mod" value="<?php echo $question->id ?>" />
             </form>
+            <?php
+
+            /* see if any statement was sent to this page through the GET method */
+            if(isset($_GET['success'])){
+                switch($_GET['success']){
+                    case "true":
+                        echo "<div id='failure'>A kérdésmódosítás sikeres volt.</div>\n";
+                        break;
+
+                    case "false":
+                        echo "<div id='failure'>A kérdésmódosítás sikertelen volt.</div>\n";
+                        break;
+                }
+            }
+
+            ?>
         </div>
     </div>
     <!-- SITE CONTENT END -->

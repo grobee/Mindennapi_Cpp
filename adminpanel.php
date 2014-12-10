@@ -6,7 +6,7 @@ require_once("sessionfunctions.php");
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>adminpanel</title>
+    <title>Adminpanel</title>
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/adminpanel.css" />
 </head>
@@ -16,7 +16,7 @@ require_once("sessionfunctions.php");
         <!-- HEADER -->
         <div id="header">
             <div id="innerheader" class="sitecenter">
-                <img src="images/logo_small.png" width="100" height="75" alt="logo" />
+                <img src="images/logo_small.png" width="100" height="75" alt="logo"/>
                 <a href="adminpanel.php"> Kérdések </a>
                 <a href=""> Elérhetőség </a>
             </div>
