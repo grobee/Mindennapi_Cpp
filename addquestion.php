@@ -1,4 +1,4 @@
-<?php require_once("sessionfunctions.php"); ?>
+﻿<?php require_once("sessionfunctions.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +31,7 @@
                     <!-- FIRST ROW -->
                     <tr>
                         <td align="right"><label for="text_input1">Kérdés</label></td>
-                        <td><input class="text_input" type="text" name="question"/></label></td>
+                        <td><textarea class="text_input" name="question"></textarea></label></td>
                     </tr>
                     <!-- SECOND ROW -->
                     <tr>

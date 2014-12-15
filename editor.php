@@ -48,7 +48,7 @@ $question = new Question($row['id_question'], $row['question'], $row['answer_1']
                     <!-- FIRST ROW -->
                     <tr>
                         <td align="right"><label for="text_input1">Kérdés</label></td>
-                        <td><input id="text_input1" class="text_input" type="text" name="mod_question" value="<?php echo $question->question ?>" /></td>
+                        <td><textarea id="text_input1" class="text_input" type="text" name="mod_question"><?php echo $question->question ?></textarea></td>
                     </tr>
                     <!-- SECOND ROW -->
                     <tr>
