@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Created by PhpStorm.
  * User: Tamás
@@ -16,8 +16,7 @@ if (isset($_GET['correct']))
 if (isset($_GET['id_question']))
     $id_question = $_GET['id_question'];
 
-
-$sql = new mysqli("localhost", "root", "", "mindenapicpp");
+require_once('dbconfig.php');
 $sql->query("SET NAMES utf8");
 $result = $sql->query("SELECT id_member FROM users WHERE index_number='$index'");
 $row = $result->fetch_assoc();

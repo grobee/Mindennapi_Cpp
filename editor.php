@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 require('Question.php');
 require_once("sessionfunctions.php");
@@ -6,7 +6,7 @@ require_once("sessionfunctions.php");
 if(!isset($_GET['id']))
     header("Location: adminpanel.php");
 
-$sql = new mysqli("localhost", "root", "", "mindenapicpp");
+require_once('dbconfig.php');
 
 $id = $sql->escape_string($_GET['id']);
 $sql->query("SET NAMES utf8");

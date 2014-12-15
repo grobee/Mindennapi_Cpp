@@ -1,12 +1,11 @@
-<?php
+﻿<?php
 /**
  * Created by PhpStorm.
  * User: Tamás
  * Date: 11/26/2014
  * Time: 6:32 PM
  */
-
-$sql = new mysqli("localhost", "root", "", "mindenapicpp");
+require_once('dbconfig.php');
 $sql->query("SET NAMES utf8");
 $result = $sql->query("SELECT * FROM questions ORDER BY RAND() LIMIT 1");
 $row = $result->fetch_assoc();
