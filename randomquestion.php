@@ -10,9 +10,7 @@ $sql->query("SET NAMES utf8");
 $result = $sql->query("SELECT * FROM questions ORDER BY RAND() LIMIT 1");
 $row = $result->fetch_assoc();
 
-$pack=array();
-
-$pack[] = array( 'id_question' =>$row['id_question'],
+$pack = array( 'id_question' =>$row['id_question'],
                  'question'=> $row['question'],
                  'answer_1'=> $row['answer_1'],
                  'answer_2'=> $row['answer_2'],
