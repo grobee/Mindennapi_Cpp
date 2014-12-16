@@ -1,8 +1,12 @@
 .text_input {
-    border-bottom: 1px solid #286C2B;
-    border-left: 0;
-    border-right: 0;
-    border-top: 0;
+    border: 1px solid #286C2B;
+    width: 300px;
+    resize: none;
+
+}
+
+#text_input1 {
+    height: 130px;
 }
 
 #editor_form table {

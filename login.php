@@ -30,7 +30,7 @@ if (isset($_GET['pass'])) {
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Cpp login</title>
+    <title>Bejelentkezés</title>
     <link rel="stylesheet" href="style/style.css"/>
     <link rel="stylesheet" href="style/login.css"/>
 </head>

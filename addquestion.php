@@ -31,27 +31,27 @@
                     <!-- FIRST ROW -->
                     <tr>
                         <td align="right"><label for="text_input1">Kérdés</label></td>
-                        <td><textarea class="text_input" name="question"></textarea></label></td>
+                        <td><textarea id="question_input" class="text_input" name="question"></textarea></td>
                     </tr>
                     <!-- SECOND ROW -->
                     <tr>
                         <td align="right"><label for="text_input2">Első válasz</label></td>
-                        <td><input class="text_input" type="text" name="answer1"/></td>
+                        <td><textarea class="text_input" type="text" name="answer1"></textarea></td>
                     </tr>
                     <!-- THIRD ROW -->
                     <tr>
                         <td align="right"><label for="text_input3">Második válasz</label></td>
-                        <td><input class="text_input" type="text" name="answer2"/></td>
+                        <td><textarea class="text_input" type="text" name="answer2"></textarea></td>
                     </tr>
                     <!-- FOURTH ROW -->
                     <tr>
                         <td align="right"><label for="text_input4">Harmadik válasz</label></td>
-                        <td><input class="text_input" type="text" name="answer3"/></td>
+                        <td><textarea class="text_input" type="text" name="answer3"></textarea></td>
                     </tr>
                     <!-- FIFTH ROW -->
                     <tr>
                         <td align="right"><label for="text_input5">Negyedik válasz</label></td>
-                        <td><input class="text_input" type="text" name="answer4"/></td>
+                        <td><textarea class="text_input" type="text" name="answer4"></textarea></td>
                     </tr>
                     <!-- SIXTH ROW -->
                     <tr>
@@ -113,37 +113,3 @@
 </div>
 </body>
 </html>
-
-
-<!-- <div id="center">
-
-
-
-        <label>Válasz 1: <input type="text" name="answer1"/></label>
-        <br/><br/>
-        <label>Válasz 2: <input type="text" name="answer2"/></label>
-        <br/><br/>
-        <label>Válasz 3: <input type="text" name="answer3"/></label>
-        <br/><br/>
-        <label>Válasz 4: <input type="text" name="answer4"/></label>
-        <br/><br/>
-
-        <div id="select">
-            <span>Helyes válasz:</span>
-            <select name="correct_answer" size=”1”>
-                <option value="1">A</option>
-                <option value="2">B</option>
-                <option value="3">C</option>
-                <option value="4">D</option>
-            </select><br/><br/>
-        </div>
-        <div id="select2">
-            <span>Nehézség:</span>
-            <select name="difficulty" size=”1”>
-                <option value="easy">Könnyű</option>
-                <option value="medium">Közepes</option>
-                <option value="hard">Nehéz</option>
-            </select><br/><br/>
-        </div>
-        <input type="submit" name="send" value="Küldés"/>
-    </form>

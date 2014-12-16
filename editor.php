@@ -53,22 +53,22 @@ $question = new Question($row['id_question'], $row['question'], $row['answer_1']
                     <!-- SECOND ROW -->
                     <tr>
                         <td align="right"><label for="text_input2">Első válasz</label></td>
-                        <td><input id="text_input2" class="text_input" type="text" name="mod_answer1" value="<?php echo $question->answer1 ?>" /></td>
+                        <td><textarea id="text_input2" class="text_input" type="text" name="mod_answer1"><?php echo $question->answer1 ?></textarea></td>
                     </tr>
                     <!-- THIRD ROW -->
                     <tr>
                         <td align="right"><label for="text_input3">Második válasz</label></td>
-                        <td><input id="text_input3" class="text_input" type="text" name="mod_answer2" value="<?php echo $question->answer2; ?>" /></td>
+                        <td><textarea id="text_input3" class="text_input" type="text" name="mod_answer2"><?php echo $question->answer2; ?></textarea></td>
                     </tr>
                     <!-- FOURTH ROW -->
                     <tr>
                         <td align="right"><label for="text_input4">Harmadik válasz</label></td>
-                        <td><input id="text_input4" class="text_input" type="text" name="mod_answer3" value="<?php echo $question->answer3; ?>" /></td>
+                        <td><textarea id="text_input4" class="text_input" type="text" name="mod_answer3"><?php echo $question->answer3; ?></textarea></td>
                     </tr>
                     <!-- FIFTH ROW -->
                     <tr>
                         <td align="right"><label for="text_input5">Negyedik válasz</label></td>
-                        <td><input id="text_input5" class="text_input" type="text" name="mod_answer4" value="<?php echo $question->answer4; ?>" /></td>
+                        <td><textarea id="text_input5" class="text_input" type="text" name="mod_answer4"><?php echo $question->answer4; ?></textarea></td>
                     </tr>
                     <!-- SIXTH ROW -->
                     <tr>
