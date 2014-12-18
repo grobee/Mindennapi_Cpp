@@ -1,4 +1,4 @@
-<?php require_once("sessionfunctions.php"); ?>
+﻿<?php require_once("sessionfunctions.php"); ?>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -22,7 +22,6 @@
                 <img src="images/logo_small.png" width="100" height="75" alt="logo"/>
                 <a href="adminpanel.php"> Kérdések </a>
                 <a href="#"> Statisztika </a>
-                <a href=""> Elérhetőség </a>
             </div>
         </div>
 

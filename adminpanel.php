@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /* see if logged in */
 require_once("sessionfunctions.php");
 ?>
@@ -19,7 +19,6 @@ require_once("sessionfunctions.php");
                 <img src="images/logo_small.png" width="100" height="75" alt="logo"/>
                 <a href="#"> Kérdések </a>
                 <a href="statisticsPage.php"> Statisztika </a>
-                <a href=""> Elérhetőség </a>
             </div>
         </div>
 
