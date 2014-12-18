@@ -5,13 +5,6 @@ use mysqli;
 use Question;
 
 require_once("Question.php");
-
-/**
- * Class QuestionList
- * @package Robert
- * @author Gulyás Róbert
- * @version 0.2
- */
 class QuestionList {
     /** Question array */
     private $questions;

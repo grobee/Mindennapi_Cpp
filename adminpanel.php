@@ -17,17 +17,16 @@ require_once("sessionfunctions.php");
         <div id="header">
             <div id="innerheader" class="sitecenter">
                 <img src="images/logo_small.png" width="100" height="75" alt="logo"/>
-                <a href="adminpanel.php"> Kérdések </a>
+                <a href="#"> Kérdések </a>
+                <a href="statisticsPage.php"> Statisztika </a>
                 <a href=""> Elérhetőség </a>
             </div>
         </div>
 
         <!-- BODY -->
         <div id="site_content">
-            <p>
-                Ezen oldal segítségével kilistázhatóak a már adatbázisban lévő kérdések, törölhetőek és módosíthatóak.
-                Ezenkívül még lehetőség van új kérdése hozzáadására, ezáltal bővítve a már meglévő feladatok számát.
-            </p>
+            <p>Ezen oldal segítségével kilistázhatóak a már adatbázisban lévő kérdések, törölhetőek és módosíthatóak.
+                Ezenkívül még lehetőség van új kérdése hozzáadására, ezáltal bővítve a már meglévő feladatok számát.</p>
 
             <div id="questions_table">
                 <?php
