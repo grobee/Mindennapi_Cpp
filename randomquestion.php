@@ -17,8 +17,8 @@ $pack = array( 'id_question' =>$row['id_question'],
                  'answer_3'=> $row['answer_3'],
                  'answer_4'=> $row['answer_4'],
                  'correct_answer' => $row['correct_answer'],
-                 'difficulty'=> $row['difficulty']),
-		'guid' => guid();
+                 'difficulty'=> $row['difficulty'],
+		 'guid' => guid());
 
 $fp = fopen('results.json', 'w');
 fwrite($fp, json_encode($pack));
