@@ -45,3 +45,6 @@
 #questions_table tfoot a {
     color: #fff;
 }
+
+#chartContainer { margin-bottom: 50px; height: 300px; width: 100%; }
+#questions_table p { margin: auto; display: block; margin-left: 25%; }

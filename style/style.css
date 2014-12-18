@@ -144,3 +144,5 @@ h1, h2, h3, h4, h5,h6 {
     color:#444444;
     background-color:#e5e5e5;
 }
+
+.hidden { display: none; }

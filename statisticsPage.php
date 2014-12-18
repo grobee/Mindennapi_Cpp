@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <title>Statisztika</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="scripts/statistics.js"></script>
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/statistics.css" />
     <?php checkSessionAndDisplay(); ?>
     <?php require('dbconfig.php'); ?>
     <?php require('statistics.php'); ?>
+    <script src="scripts/canvasjs.min.js"></script>
+    <script type="text/javascript" src="scripts/statistics.js"></script>
 </head>
 <body>
     <!-- BODY -->
@@ -31,13 +32,19 @@
             <?php
             $statistics = new Statistics($mysqli);
             echo "<div class='hidden'>".$statistics->getCorrectPercentage()."</div>";
-            echo "<div class='hidden'>".$statistics->getIncorrectPrecentage()."</div>"; ?>
+            echo "<div class='hidden'>".$statistics->getIncorrectPrecentage()."</div>";
+            ?>
+
+            <div id="chartContainer"></div>
 
             <div id="questions_table">
                 <?php
-                /* tablazat */
-                echo "<table cellpadding='10'>";
-                echo "<thead>
+                $i = 0;
+                if(!sizeof($statistics->getFullList())) echo "<p>Még senki sem adott választ.</p>";
+                else {
+                    /* tablazat */
+                    echo "<table cellpadding='10'>";
+                    echo "<thead>
                         <th>Kérdés</th>
                         <th>Helyesség</th>
                         <th>Név</th>
@@ -45,24 +52,22 @@
                         <th>Nehézség</th>
                      </thead>";
 
-                /**@var Question $question */
-                $i = 0;
-                foreach ($statistics->getFullList() as $answer) {
-                    if($i % 2 == 0)
-                        echo "<tr id='even_table_row'>";
-                    else
-                        echo "<tr id='odd_table_row'>";
+                    foreach ($statistics->getFullList() as $answer) {
+                        if($i % 2 == 0)
+                            echo "<tr id='even_table_row'>";
+                        else
+                            echo "<tr id='odd_table_row'>";
 
-                    echo "<td>" . $answer['question'] . "</td><td>" . ($answer['correct'] == 1 ? "helyes" : "helytelen") . "</td><td>" . $answer['name'] . "</td>
+                        echo "<td>" . $answer['question'] . "</td><td>" . ($answer['correct'] == 1 ? "helyes" : "helytelen") . "</td><td>" . $answer['name'] . "</td>
                             <td>" . $answer['date'] . "</td><td>" . $answer['difficulty'] . "</td>";
 
-                    echo "</tr>";
-                    ++$i;
+                        echo "</tr>";
+                        ++$i;
+                    }
+
+                    echo "</table>";
+                    $mysqli->close();
                 }
-
-                echo "</table>";
-
-                $mysqli->close();
                 ?>
             </div>
         </div>
