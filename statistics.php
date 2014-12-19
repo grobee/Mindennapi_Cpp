@@ -7,9 +7,12 @@ class Statistics {
     private $incorrect_count;
     private $total_count;
 
-    public function __construct(mysqli $sqlcon){
+    public function __construct(mysqli $sqlcon, $bottom = null, $number = null){
         $this->sql = $sqlcon;
         $this->data = new ArrayObject();
+
+        $this->bottom = $bottom;
+        $this->number = $number;
 
         $this->generateFullList();
         $this->countCorrect();
@@ -30,7 +33,9 @@ class Statistics {
         $this->sql->query('SET NAMES utf8');
         $query = "SELECT a.correct AS 'correct', a.date AS 'date', CONCAT(m.forename, ' ', m.surname) AS 'name',
             q.question AS 'question', q.difficulty AS 'difficulty' FROM answers a INNER JOIN members m ON a.id_member = m.id_member
-            INNER JOIN questions q ON a.id_question = q.id_question";
+            INNER JOIN questions q ON a.id_question = q.id_question ORDER BY a.date DESC";
+
+        if($this->bottom != null && $this->number != null) $query .= " LIMIT $this->bottom, $this->number";
 
         $result = $this->sql->query($query);
 

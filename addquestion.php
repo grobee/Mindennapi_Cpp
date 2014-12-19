@@ -73,9 +73,9 @@
                         <td align="center">
                             <div id="diff_select_div" class="css_select">
                                 <select id="difficulty" name="difficulty" size=”1”>
-                                    <option value="easy">Könnyű</option>
-                                    <option value="medium">Közepes</option>
-                                    <option value="hard">Nehéz</option>
+                                    <option value="könnyű">Könnyű</option>
+                                    <option value="közepes">Közepes</option>
+                                    <option value="nehéz">Nehéz</option>
                                 </select>
                             </div>
                         </td>
