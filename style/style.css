@@ -63,7 +63,8 @@ h1, h2, h3, h4, h5,h6 {
 /*------------------------------ login info ----------------------------------*/
 #div_logininfo {
     /*margin: 0;*/
-    position: absolute;
+    z-index: 1;
+    position: fixed;
     right:0;
     background-color: #286C2B;
     padding: 7px 25px 7px 20px;
@@ -148,3 +149,7 @@ h1, h2, h3, h4, h5,h6 {
 }
 
 .hidden { display: none; }
+
+/*---------------------------- table buttons ----------------------------------*/
+.listButton { cursor: pointer; padding: 5px 10px 5px 10px; margin: 5px 5px 0 0; border: 0; color: white; background-color: transparent; }
+#listButtons { margin-top: 20px; background-color: #444444; display: inline-block; }

@@ -1,50 +1,14 @@
-#questions_table {
-    display: block;
-    margin: 0 auto 75px 20%;
-}
-
+#questions_table { display: block; margin: 0 auto 75px 4%; max-width: 91%; }
 #questions_table th { text-align: center }
-
-#questions_table table {
-    border: 0;
-    border-collapse: collapse;
-}
-
-#questions_table table thead {
-    background-color: #444444;
-    color: #fff;
-}
-
-#questions_table table a {
-    text-decoration: none;
-}
-
-#questions_table table tr {
-    padding: 10px;
-}
-
-#even_table_row  {
-    text-align: left;
-}
-
-#odd_table_row  {
-    text-align: left;
-    background-color: #286C2B;
-    color: #fff;
-}
-/*aa286C2B*/
-
-#odd_table_row a {
-    color: #fff;
-}
-
-#questions_table tfoot {
-    background-color: #444444;
-}
-
-#questions_table tfoot a {
-    color: #fff;
-}
-
+#questions_table table { border: 0; border-collapse: collapse; }
+#questions_table table thead { background-color: #444444; color: #fff; }
+#questions_table table a { text-decoration: none; }
+#questions_table table tr { padding: 10px; }
+#even_table_row { text-align: left; }
+#odd_table_row  { text-align: left; background-color: #286C2B; color: #fff; }
+#odd_table_row a { color: #fff; }
+#questions_table tfoot { background-color: #444444; }
+#questions_table tfoot a { color: #fff; }
 #chartContainer { margin-bottom: 50px; height: 300px; width: 100%; }
-#questions_table p { margin: auto; display: block; margin-left: 25%; }
+#questions_table p { display: block;  margin: auto auto auto 25%; }
+#listButtons { margin: auto auto auto 4%; }

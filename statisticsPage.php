@@ -1,4 +1,4 @@
-﻿<?php require_once("sessionfunctions.php"); ?>
+﻿<?php require_once("sessionfunctions.php");?>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/statistics.css" />
     <?php checkSessionAndDisplay(); ?>
-    <?php require('dbconfig.php'); ?>
-    <?php require('statistics.php'); ?>
     <script src="scripts/canvasjs.min.js"></script>
+    <script type="text/javascript" src="scripts/chart.js"></script>
     <script type="text/javascript" src="scripts/statistics.js"></script>
+    <?php require('dbconfig.php');  ?>
+    <?php require('statistics.php') ?>
 </head>
 <body>
     <!-- BODY -->
@@ -28,47 +29,23 @@
         <div id="site_content">
             <p>Ezen az oldalon találhatóak meg a megadott válaszokkal kapcsolatos statisztikák. Az alábbi ábrán látható a
                 helyesen és helytelenül megadott válaszok aránya.</p>
-            <?php
-            $statistics = new Statistics($mysqli);
-            echo "<div class='hidden'>".$statistics->getCorrectPercentage()."</div>";
-            echo "<div class='hidden'>".$statistics->getIncorrectPrecentage()."</div>";
-            ?>
 
             <div id="chartContainer"></div>
 
-            <div id="questions_table">
-                <?php
-                $i = 0;
-                if(!sizeof($statistics->getFullList())) echo "<p>Még senki sem adott választ.</p>";
-                else {
-                    /* tablazat */
-                    echo "<table cellpadding='10'>";
-                    echo "<thead>
-                        <th>Kérdés</th>
-                        <th>Helyesség</th>
-                        <th>Név</th>
-                        <th>Dátum</th>
-                        <th>Nehézség</th>
-                     </thead>";
-
-                    foreach ($statistics->getFullList() as $answer) {
-                        if($i % 2 == 0)
-                            echo "<tr id='even_table_row'>";
-                        else
-                            echo "<tr id='odd_table_row'>";
-
-                        echo "<td>" . $answer['question'] . "</td><td>" . ($answer['correct'] == 1 ? "helyes" : "helytelen") . "</td><td>" . $answer['name'] . "</td>
-                            <td>" . $answer['date'] . "</td><td>" . $answer['difficulty'] . "</td>";
-
-                        echo "</tr>";
-                        ++$i;
-                    }
-
-                    echo "</table>";
-                    $mysqli->close();
-                }
-                ?>
+            <div id="listButtons">
+                <button class="listButton">Következő</button>
+                <button class="listButton">Előző</button>
             </div>
+
+            <div id="questions_table"></div>
+
+            <?php
+
+            $statistics = new Statistics($mysqli);
+            echo "<div class='hidden'>".$statistics->getCorrectPercentage()."</div>";
+            echo "<div class='hidden'>".$statistics->getIncorrectPrecentage()."</div>";
+
+            ?>
         </div>
     </div>
 

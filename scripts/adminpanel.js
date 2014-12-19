@@ -10,14 +10,14 @@ $(document).ready(function(){
     };
 
     prevBtn.onclick = function(){
-        if(limit.bottom - 15 >= 0) {
+        if(limit.bottom - 15 >= 0){
             limit.bottom -= 15;
             loadData(questionTable);
         }
     };
 
     var loadData = function(obj){
-        obj.load('ReadAnswerList.php?bottom=' + limit.bottom + '&number=' + limit.number);
+        obj.load('ReadQuestionList.php?bottom=' + limit.bottom + '&number=' + limit.number);
     };
 
     loadData(questionTable);

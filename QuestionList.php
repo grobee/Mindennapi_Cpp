@@ -17,10 +17,12 @@ class QuestionList {
     }
 
     /* Populate the list of questions */
-    public function populate(){
+    public function populate($bottom = null, $number = null){
         /* query the db */
         $this->sql->query("SET NAMES utf8;");
-        $result = $this->sql->query("SELECT * FROM questions;");
+
+        if($bottom != null && $number != null) $result = $this->sql->query("SELECT * FROM questions LIMIT $bottom, $number");
+        else $result = $this->sql->query("SELECT * FROM questions");
 
         /* array of question attributes from the database */
         /* iterator */
