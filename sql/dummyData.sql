@@ -49,7 +49,7 @@ BEGIN
         END IF;
     
 		INSERT INTO answers(id_question, correct, date, id_member)
-        VALUES (rand_quest_id, correctness, '2014-10-24', member);    
+        VALUES (rand_quest_id, correctness, CURRENT_DATE(), member);    
         
         SET counter = counter + 1;
     END WHILE;    
