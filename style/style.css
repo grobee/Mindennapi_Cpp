@@ -62,11 +62,13 @@ h1, h2, h3, h4, h5,h6 {
 
 /*------------------------------ login info ----------------------------------*/
 #div_logininfo {
-    position: fixed;
-    left: 85%;
+    /*margin: 0;*/
+    position: absolute;
+    right:0;
     background-color: #286C2B;
     padding: 7px 25px 7px 20px;
     color: #fff;
+    width: 170px;
     text-decoration: none;
 }
 
