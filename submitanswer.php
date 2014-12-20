@@ -21,9 +21,44 @@ $sql->query("SET NAMES utf8");
 $result = $sql->query("SELECT id_member FROM users WHERE index_number='$index'");
 $row = $result->fetch_assoc();
 
-//var_dump($row['id_member']);
+
 $id_member = $row['id_member'];
+
+// Checking the correct answer
+$sql->query("SET NAMES utf8");
+$result = $sql->query("SELECT * FROM questions WHERE id_question='$id_question'");
+$row = $result->fetch_assoc();
+
+$real_correct_num=0;
+switch ($row['correct_answer']) {
+    case $row['answer_1'] :
+        $real_correct_num=1;
+    break;
+    case $row['answer_2'] :
+        $real_correct_num=2;
+        break;
+    case $row['answer_3'] :
+        $real_correct_num=3;
+        break;
+    case $row['answer_4'] :
+        $real_correct_num=4;
+        break;
+}
+
+
+if (!empty($correct)) {
+    if ($correct == $real_correct_num)
+        $bool_correct=1;
+    else
+        $bool_correct=0;
+}
+
+//var_dump($bool_correct);
+
+
+// Inserting the answer to the answers table
 $mysql_date_now = date("Y-m-d");
+//echo("INSERT INTO answers (id_question, correct, date, id_member)" . "VALUES ('$id_question', '$bool_correct', '$mysql_date_now', '$id_member');");
 
 $sql->query("SET NAMES UTF8");
-$sql->query("INSERT INTO answers (id_question, correct, date, id_member)" . "VALUES ('$id_question', '$correct', '$mysql_date_now', '$id_member');");
+$sql->query("INSERT INTO answers (id_question, correct, date, id_member)" . "VALUES ('$id_question', '$bool_correct', '$mysql_date_now', '$id_member');");
