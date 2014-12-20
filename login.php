@@ -17,11 +17,11 @@ if (isset($_SESSION["session_use"]))
         header("Location:adminpanel.php");
 
 /* This part gets the username and password from its form */
-if (isset($_GET['username'])) {
-    $username = $_GET['username'];
+if (isset($_POST['username'])) {
+    $username = $_POST['username'];
 }
-if (isset($_GET['pass'])) {
-    $pass = $_GET['pass'];
+if (isset($_POST['pass'])) {
+    $pass = $_POST['pass'];
 }
 
 ?>
@@ -35,7 +35,7 @@ if (isset($_GET['pass'])) {
     <link rel="stylesheet" href="style/login.css"/>
 </head>
 <body>
-<form method="get" action="login.php">
+<form method="post" action="login.php">
     <div id="container">
         <!-- HEADER -->
         <div id="header">
@@ -58,7 +58,7 @@ if (isset($_GET['pass'])) {
         <input class="input_button" type="submit" name="login" value="Bejelentkezés">
 
         </div> <?php
-        /* Check does the username password combo exist, and átírányít to the adminpanel page */
+        /* Check does the username password combo exist, and redirects to the adminpanel page */
         if (isset($username) && isset($pass)) {
         $salt = "vts";
 
