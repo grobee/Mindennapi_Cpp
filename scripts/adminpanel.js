@@ -32,11 +32,11 @@ $(document).ready(function(){
 
     var setTableWidth = function(variable){
         if(variable){
-            questionTable.width('82%');
+            questionTable.width('auto');
             questionTable.height(500);
             return 0;
         }
-        questionTable.width('82%');
+        questionTable.width('auto');
         questionTable.height('auto');
     };
 

@@ -18,7 +18,7 @@ $qList->populate($bottom, $number);
 /* tablazat */
 echo "<table cellpadding='6'>";
 echo "<thead>
-        <th>Kérdés szövege</th><th>Helyes</th><th>Nehézség</th><th colspan='2'></th>
+        <th>Kérdés szövege</th><th>Válasz 1</th><th>Válasz 2</th><th>Válasz 3</th><th>Válasz 4</th><th>Helyes</th><th>Nehézség</th><th colspan='2'></th>
       </thead>";
 
 /**@var Question $question */
@@ -29,14 +29,15 @@ foreach ($qList->getQuestions() as $question) {
     else
         echo "<tr id='odd_table_row'>";
 
-    echo "<td>" . $question->question . "</td><td>" . $question->correctAnswer . "</td><td>" . $question->difficulty . "</td>";
+    echo "<td>" . $question->question . "</td><td>" . $question->answer1 . "</td><td>" . $question->answer2 . "</td>
+                    <td>" . $question->answer3 . "</td><td>" . $question->answer4 . "</td><td>" . $question->correctAnswer . "</td><td>" . $question->difficulty . "</td>";
 
     if($i % 2 == 0){
         echo "
-                            <td><a href='editor.php?id=".$question->id."'>
+                            <td><a id='delete_btn' href='editor.php?id=".$question->id."'>
                                 <img alt='edit icon' width='32' height='32' src='images/adminpanel/edit_icon_dark.png' />
                             </a></td>
-                            <td><a href='delete.php?id=".$question->id."'>
+                            <td><a id='delete_btn' href='delete.php?id=".$question->id."'>
                                     <img alt='delete icon' width='32' height='32' src='images/adminpanel/delete_icon_light.png' />
                                 </a></td>";
     }
