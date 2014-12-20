@@ -38,7 +38,7 @@
                 <button class="listButton">Előző</button>
             </div>
 
-            <div id="loading_div"><img width="32" height="32" alt="loading..." src="images/loading.gif" /></div>
+            <div id="loading_div"><img id="question_table_img" width="32" height="32" alt="loading..." src="images/loading.gif" /></div>
             <div id="questions_table"></div>
 
             <?php
