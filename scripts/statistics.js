@@ -28,7 +28,6 @@ $(document).ready(function(){
             cache: false,
             success: function (html) {
                 obj.html(html);
-                loadingImg.hide();
                 setTableWidth(false);
             }
         });

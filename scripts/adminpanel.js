@@ -27,7 +27,6 @@ $(document).ready(function(){
             type: "GET",
             cache: false,
             success: function (html) {
-                loadingImg.hide();
                 obj.html(html);
                 setTableWidth(false);
             }

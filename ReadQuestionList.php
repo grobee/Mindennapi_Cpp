@@ -34,19 +34,19 @@ foreach ($qList->getQuestions() as $question) {
 
     if($i % 2 == 0){
         echo "
-                            <td><a id='delete_btn' href='editor.php?id=".$question->id."'>
+                            <td id='mod_btn' ><a href='editor.php?id=".$question->id."'>
                                 <img alt='edit icon' width='32' height='32' src='images/adminpanel/edit_icon_dark.png' />
                             </a></td>
-                            <td><a id='delete_btn' href='delete.php?id=".$question->id."'>
+                            <td id='mod_btn'><a href='delete.php?id=".$question->id."'>
                                     <img alt='delete icon' width='32' height='32' src='images/adminpanel/delete_icon_light.png' />
                                 </a></td>";
     }
     else {
         echo "
-                            <td><a href='editor.php?id=".$question->id."'>
+                            <td id='mod_btn'><a href='editor.php?id=".$question->id."'>
                                 <img alt='edit icon' width='32' height='32' src='images/adminpanel/edit_icon_light.png' />
                             </a></td>
-                            <td><a href='delete.php?id=".$question->id."'>
+                            <td id='mod_btn'><a href='delete.php?id=".$question->id."'>
                                     <img alt='delete icon' width='32' height='32' src='images/adminpanel/delete_icon_dark.png' />
                                 </a></td>";
     }
