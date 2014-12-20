@@ -1,9 +1,4 @@
 <?php
-/**
- * @author Gulyás Róbert
- * Date: 10/24/2014
- * Time: 6:40 PM
- */
 
 echo "<meta charset='UTF-8' />";
 
@@ -44,13 +39,13 @@ if (empty($_GET["question"]) OR empty($_GET["answer1"]) OR empty($_GET["answer2"
             $question->correctAnswer = $question->answer1;
             break;
         case 2:
-            $question->correctAnswer = $question->answer1;
+            $question->correctAnswer = $question->answer2;
             break;
         case 3:
-            $question->correctAnswer = $question->answer1;
+            $question->correctAnswer = $question->answer3;
             break;
         case 4:
-            $question->correctAnswer = $question->answer1;
+            $question->correctAnswer = $question->answer4;
             break;
     }
 

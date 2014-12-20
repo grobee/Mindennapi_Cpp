@@ -60,10 +60,10 @@
                         <td align="center">
                             <div class="css_select">
                                 <select id="correct_answer" name="correct_answer" size=”1”>
-                                    <option value="v1">A</option>
-                                    <option value="v2">B</option>
-                                    <option value="v3">C</option>
-                                    <option value="v4">D</option>
+                                    <option value="1">A</option>
+                                    <option value="2">B</option>
+                                    <option value="3">C</option>
+                                    <option value="4">D</option>
                                 </select>
                             </div>
                         </td>
