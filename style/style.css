@@ -1,47 +1,25 @@
-body, html {
-    margin:0;
-    padding:0;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    color: #666;
-    background-color: #eeeeee;
-}
-
-h1, h2, h3, h4, h5,h6 {
-    font-weight:normal;
-}
-
+body, html { margin:0;  padding:0; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; color: #666; background-color: #eeeeee; }
+h1, h2, h3, h4, h5,h6 { font-weight:normal; }
 /*--------------------------- SITE BODY -------------------------------*/
-
-#header {
-    display: block;
-    background-color:  #eeeeee;
-    height: auto;
-    border-bottom: 17px solid #286C2B;
-}
-
+#header { display: block; background-color:  #eeeeee; height: auto; border-bottom: 17px solid #286C2B; }
 #innerheader {
     padding: 5px 15px;
     background-color: #fff;
 }
-
 #innerheader img {
 	margin-right: 20px;
 }
-
 #innerheader a {
 	background-color: #286C2B;
 	padding: 10px 14px 10px 10px;
 	text-decoration: none;
 	color: #fff;
 }
-
 #innerheader a:hover{
 	background-color: white;
 	padding: 7px 10px 5px 9px;
 	color: black;
 }
-
 #container {
     display: block;
     background-color:  #FFF;
@@ -55,101 +33,24 @@ h1, h2, h3, h4, h5,h6 {
     border-left: 2px solid #286C2B;
     border-bottom: 2px solid #286C2B;
 }
-
 #site_content {
     padding: 15px;
 }
-
 /*------------------------------ login info ----------------------------------*/
-#div_logininfo {
-    /*margin: 0;*/
-    z-index: 1;
-    position: fixed;
-    right:0;
-    background-color: #286C2B;
-    padding: 7px 25px 7px 20px;
-    color: #fff;
-    width: 170px;
-    text-decoration: none;
-}
-
-#div_logininfo div {
-    display: block;
-    margin-top: 12px;
-}
-
-#div_logininfo a {
-    color: #fff;
-    display: inline-block;
-    float: right;
-    margin-top: 15px;
-}
-
-#div_logininfo img {
-    width: 48px;
-    height: 48px;
-    float: left;
-}
-
+#div_logininfo { z-index: 1; position: fixed; right:0; background-color: #286C2B; padding: 7px 25px 7px 20px; color: #fff; width: 170px; text-decoration: none; }
+#div_logininfo div { display: block; margin-top: 12px; }
+#div_logininfo a { color: #fff; display: inline-block; float: right; margin-top: 15px; }
+#div_logininfo img { width: 48px; height: 48px; float: left; }
 /*------------------------------- fooooter -----------------------------------*/
-#footer {
-    display: block;
-	text-align: center;
-    color: #444444;
-    font-size: 8px;
-    width: 1024px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-}
-
+#footer { display: block; text-align: center; color: #444444; font-size: 8px; width: 1024px; margin-left: auto; margin-right: auto; margin-top: 10px; }
 /*--------------------------------- four pictures -----------------------------------*/
-
-#intro{
-    padding:0 0 30px 0;
-}
-
-#intro ul{
-    margin:0;
-    padding:0;
-    list-style:none;
-}
-
-#intro li{
-    display:block;
-    float:left;
-    width:269px;
-    margin:0 8px 0 0;
-}
-
-#intro li.last{
-    margin-right:0;
-}
-
-#intro img{
-    display: block;
-    width: 255px;
-    margin: 0 0 8px 0;
-    padding: 4px;
-    color: #666666;
-    background-color: #FFFFFF;
-    border: 1px solid #E9E9E9;
-}
-
-#intro a{
-    display:block;
-    width:265px;
-    margin:0;
-    padding:15px 0;
-    font-weight:bold;
-    text-align:center;
-    overflow:hidden;
-    color:#444444;
-    background-color:#e5e5e5;
-}
-
+#intro{ padding:0 0 30px 0; }
+#intro ul{ margin:0; padding:0; list-style:none; }
+#intro li{ display:block; float:left; width:269px; margin:0 8px 0 0; }
+#intro li.last{ margin-right:0; }
+#intro img{  display: block; width: 255px; margin: 0 0 8px 0; padding: 4px; color: #666666; background-color: #FFFFFF; border: 1px solid #E9E9E9; }
+#intro a{ display:block; width:265px;  margin:0;  padding:15px 0;  font-weight:bold; text-align:center;  overflow:hidden;  color:#444444;  background-color:#e5e5e5; }
 .hidden { display: none; }
-
 /*---------------------------- table buttons ----------------------------------*/
 .listButton { cursor: pointer; padding: 5px 10px 5px 10px; margin: 5px 5px 0 0; border: 0; color: white; background-color: transparent; }
 #listButtons { margin-top: 20px; background-color: #444444; display: inline-block; }

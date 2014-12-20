@@ -32,7 +32,6 @@ if (empty($_GET["question"]) OR empty($_GET["answer1"]) OR empty($_GET["answer2"
     if (isset($_GET["difficulty"]))
         $question->difficulty = $sql->escape_string($_GET["difficulty"]);
 
-
     /* determine the correct answer */
     switch ($corrAnsNumber) {
         case 1:
