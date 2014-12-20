@@ -31,6 +31,7 @@ if (isset($_POST['pass'])) {
 <head lang="en">
     <meta charset="UTF-8">
     <title>Bejelentkezés</title>
+    <link rel="shortcut icon" href="images/logo_tab.png" />
     <link rel="stylesheet" href="style/style.css"/>
     <link rel="stylesheet" href="style/login.css"/>
 </head>

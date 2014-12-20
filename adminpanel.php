@@ -7,6 +7,7 @@ require_once("sessionfunctions.php");
 <head lang="en">
     <meta charset="UTF-8">
     <title>Adminpanel</title>
+    <link rel="shortcut icon" href="images/logo_tab.png" />
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/adminpanel.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

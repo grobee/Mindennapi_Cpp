@@ -21,6 +21,7 @@ $question = new Question($row['id_question'], $row['question'], $row['answer_1']
 <head lang="en">
     <meta charset="UTF-8">
     <title>Kérdés módosítása</title>
+    <link rel="shortcut icon" href="images/logo_tab.png" />
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/editor.css" />
 </head>

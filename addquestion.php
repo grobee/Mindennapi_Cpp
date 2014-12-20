@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Új kérdés bevitele</title>
+    <link rel="shortcut icon" href="images/logo_tab.png" />
     <link rel="stylesheet" type="text/css" href="style/style.css"/>
     <link rel="stylesheet" type="text/css" href="style/addquestion.css"/>
 </head>

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Statisztika</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="images/logo_tab.png" />
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/statistics.css" />
     <?php checkSessionAndDisplay(); ?>
