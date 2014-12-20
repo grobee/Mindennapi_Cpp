@@ -7,12 +7,16 @@ $(document).ready(function(){
 
     nextBtn.onclick = function(){
         limit.bottom += 15;
+        questionTable.html(loadingImg.html());
+        setTableWidth(true);
         loadData(questionTable);
     };
 
     prevBtn.onclick = function(){
         if(limit.bottom - 15 >= 0) {
             limit.bottom -= 15;
+            questionTable.html(loadingImg.html());
+            setTableWidth(true);
             loadData(questionTable);
         }
     };
