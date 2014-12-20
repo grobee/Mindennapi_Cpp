@@ -1,13 +1,16 @@
 #container { min-height: 550px; }
+#loading_div { display: none; text-align: center; }
 /*--------------------------- questions table --------------------------------*/
-#questions_table { display: block; }
+#questions_table { margin-left: 10%; display: block; border: 4px solid #444444;  }
 #questions_table th { text-align: center; }
 #questions_table table { border: 0; border-collapse: collapse; }
 #questions_table table thead { background-color: #444444; color: #fff; }
 #questions_table table a { text-decoration: none; }
 #questions_table table tr { padding: 10px; }
+#questions_table img { display: block; margin-left: 50%; margin-top: 20%; }
 #even_table_row  { text-align: left; }
 #odd_table_row  { text-align: left;  background-color: #286C2B; color: #fff; }
 #odd_table_row a { color: #fff; }
 #questions_table tfoot { background-color: #444444; }
 #questions_table tfoot a { color: #fff; }
+#listButtons { margin-left: 10%; }

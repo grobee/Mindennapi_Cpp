@@ -2,40 +2,12 @@ body, html { margin:0;  padding:0; font-family: Verdana, Arial, Helvetica, sans-
 h1, h2, h3, h4, h5,h6 { font-weight:normal; }
 /*--------------------------- SITE BODY -------------------------------*/
 #header { display: block; background-color:  #eeeeee; height: auto; border-bottom: 17px solid #286C2B; }
-#innerheader {
-    padding: 5px 15px;
-    background-color: #fff;
-}
-#innerheader img {
-	margin-right: 20px;
-}
-#innerheader a {
-	background-color: #286C2B;
-	padding: 10px 14px 10px 10px;
-	text-decoration: none;
-	color: #fff;
-}
-#innerheader a:hover{
-	background-color: white;
-	padding: 7px 10px 5px 9px;
-	color: black;
-}
-#container {
-    display: block;
-    background-color:  #FFF;
-    text-align: justify;
-    width: 1024px;
-    margin: auto;
-    min-height: 75%;
-    font-size: 13px;
-    box-shadow: 0 0 5px #888888;
-    border-right: 2px solid #286C2B;
-    border-left: 2px solid #286C2B;
-    border-bottom: 2px solid #286C2B;
-}
-#site_content {
-    padding: 15px;
-}
+#innerheader { padding: 5px 15px; background-color: #fff; }
+#innerheader img { margin-right: 20px; }
+#innerheader a { background-color: #286C2B;	padding: 10px 14px 10px 10px; text-decoration: none; color: #fff; }
+#innerheader a:hover{ background-color: white; padding: 7px 10px 5px 9px; color: black; }
+#container { display: block; background-color:  #FFF; text-align: justify; width: 1024px; margin: auto; font-size: 13px; box-shadow: 0 0 5px #888888; border-right: 2px solid #286C2B; border-left: 2px solid #286C2B; border-bottom: 2px solid #286C2B; }
+#site_content { padding: 10px; }
 /*------------------------------ login info ----------------------------------*/
 #div_logininfo { z-index: 1; position: fixed; right:0; background-color: #286C2B; padding: 7px 25px 7px 20px; color: #fff; width: 170px; text-decoration: none; }
 #div_logininfo div { display: block; margin-top: 12px; }
