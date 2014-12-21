@@ -6,6 +6,11 @@ $type = $mysqli->real_escape_string($_GET['type']);
 $bottom = $mysqli->real_escape_string($_GET['bottom']);
 $number = $mysqli->real_escape_string($_GET['number']);
 
+if($bottom < 0){
+    echo "0";
+    exit();
+}
+
 if($type == 'questions'){
     $query = "SELECT * FROM questions LIMIT $bottom, $number";
     echo $mysqli->query($query)->num_rows;

@@ -1,7 +1,7 @@
 USE mindenapicpp;
 
-DROP PROCEDURE generateDummyQuestions;
-DROP PROCEDURE generateDummyAnswers;
+DROP PROCEDURE IF EXISTS generateDummyQuestions;
+DROP PROCEDURE IF EXISTS generateDummyAnswers;
 
 DELIMITER //
 CREATE PROCEDURE generateDummyQuestions()

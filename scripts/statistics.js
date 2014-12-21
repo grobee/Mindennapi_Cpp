@@ -1,7 +1,6 @@
 $(document).ready(function(){
     var questionTable = $('#questions_table');
     var numOfRows = 0;
-    var firstTime = true;
     var limit = { bottom: 0, number: 15 };
     var loadingImg = $('#loading_div');
     var nextBtn = document.getElementsByClassName('listButton')[1];
@@ -11,7 +10,9 @@ $(document).ready(function(){
         questionTable.html(loadingImg.html());
         setTableWidth(true);
 
-        loadNumOfRows(0);
+        loadNumOfRows(-15, prevBtn);
+        loadNumOfRows(15, nextBtn);
+
         loadData(questionTable);
     };
 
@@ -20,7 +21,8 @@ $(document).ready(function(){
         questionTable.html(loadingImg.html());
         setTableWidth(true);
 
-        loadNumOfRows(0);
+        loadNumOfRows(15, nextBtn);
+        loadNumOfRows(-15, prevBtn);
 
         loadData(questionTable);
     };
@@ -31,16 +33,16 @@ $(document).ready(function(){
             questionTable.html(loadingImg.html());
             setTableWidth(true);
 
-            loadNumOfRows(-15);
+            loadNumOfRows(-15, prevBtn);
+            loadNumOfRows(+15, nextBtn);
+
             loadData(questionTable);
         }
-
-        if(limit.bottom - limit.number * 2 <= 0) prevBtn.style.display = "none";
     };
 
     var loadData = function(obj) {
         $.ajax({
-            url: 'ReadAnswerList.php?bottom=' + limit.bottom + '&number=' + limit.number,
+            url: 'ReadQuestionList.php?bottom=' + limit.bottom + '&number=' + limit.number,
             type: "GET",
             cache: false,
             success: function (html) {
@@ -51,44 +53,44 @@ $(document).ready(function(){
     };
 
     var setTableWidth = function(variable){
-        if(variable == true){
+        if(variable){
             questionTable.width('auto');
-            questionTable.height(500);
+            questionTable.height(250);
             return 0;
         }
+
         questionTable.width('auto');
         questionTable.height('auto');
     };
 
-    var loadNumOfRows = function(offset){
-        offset = limit.bottom + limit.number + offset;
+    var loadNumOfRows = function(offset, obj){
+        offset = limit.bottom + offset;
 
-        if(offset == 0) numOfRows = 0;
-        else{
-            $.ajax({
-                url: "php/GetNumOfRows.php?bottom=" + offset + "&number=" + limit.number + "&type=answers",
-                type: "GET",
-                cache: false,
-                success: function(html){
-                    numOfRows = html;
-                    setButtonVisibility();
-                }
-            });
-        }
+        $.ajax({
+            url: "php/GetNumOfRows.php?bottom=" + offset + "&number=" + limit.number + "&type=answers",
+            type: "GET",
+            cache: false,
+            success: function(html){
+                numOfRows = html;
+                setButtonVisibility(obj);
+            }
+        });
     };
 
-    var setButtonVisibility = function(){
+    var setButtonVisibility = function(obj){
         if(numOfRows == 0) {
-            nextBtn.style.display = "none";
+            if(obj == nextBtn)
+                nextBtn.style.display = "none";
+
+            if(obj == prevBtn)
+                prevBtn.style.display = "none";
         }
         else {
-            nextBtn.style.display = "inline-block";
-            prevBtn.style.display = "inline-block";
-        }
+            if(obj == nextBtn)
+                nextBtn.style.display = "inline-block";
 
-        if(firstTime) {
-            prevBtn.style.display = "none";
-            firstTime = false;
+            if(obj == prevBtn)
+                prevBtn.style.display = "inline-block";
         }
     };
 

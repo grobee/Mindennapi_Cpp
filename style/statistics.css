@@ -12,5 +12,4 @@
 #questions_table tfoot a { color: #fff; }
 /* chart container */
 #chartContainer { margin-bottom: 50px; height: 300px; width: 100%; }
-#listButtons { margin: auto auto auto 5%; }
 #loading_div { display: none; text-align: center; }
