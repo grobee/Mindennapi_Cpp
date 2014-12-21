@@ -127,18 +127,18 @@ $question = new Question($row['id_question'], $row['question'], $row['answer_1']
                         <td align="center">
                             <div id="diff_select_div" class="css_select">
                                 <?php
-                                $select_easy="<option value=\"easy\">Könnyű</option>";
-                                $select_medium="<option value=\"medium\">Közepes</option>";
-                                $select_hard="<option value=\"hard\">Nehéz</option>";
+                                $select_easy="<option value=\"könnyű\">Könnyű</option>";
+                                $select_medium="<option value=\"közepes\">Közepes</option>";
+                                $select_hard="<option value=\"nehéz\">Nehéz</option>";
                                 switch($question->difficulty){
-                                    case 'easy':
-                                        $select_easy="<option selected=\"selected\" value=\"easy\">Könnyű</option>";
+                                    case 'könnyű':
+                                        $select_easy="<option selected=\"selected\" value=\"könnyű\">Könnyű</option>";
                                         break;
-                                    case 'medium':
-                                        $select_medium="<option selected=\"selected\" value=\"medium\">Közepes</option>";
+                                    case 'közepes':
+                                        $select_medium="<option selected=\"selected\" value=\"közepes\">Közepes</option>";
                                         break;
-                                    case 'hard':
-                                        $select_hard="<option  selected=\"selected\" value=\"hard\">Nehéz</option>";
+                                    case 'nehéz':
+                                        $select_hard="<option  selected=\"selected\" value=\"nehéz\">Nehéz</option>";
                                         break;
                                 }
 
