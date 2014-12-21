@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Új kérdés bevitele</title>
-    <link rel="shortcut icon" href="images/logo_tab.png"/>
+    <link rel="shortcut icon" href="images/logo_tab.png" />
     <link rel="stylesheet" type="text/css" href="style/style.css"/>
     <link rel="stylesheet" type="text/css" href="style/addquestion.css"/>
 </head>
@@ -25,22 +25,7 @@
         <p>
             Az alábbi oldal segítségével új kérdések tölthetőek fel az adatbázisba
         </p>
-        <?php
 
-        /* see if any statement was sent to this page through the GET method */
-        if (isset($_GET['success'])) {
-            switch ($_GET['success']) {
-                case "true":
-                    echo "<div id='failure' class='success'>A kérdésbevitel sikeres volt.</div>\n";
-                    break;
-
-                case "false":
-                    echo "<div id='failure' class='fail'>A kérdésbevitel sikertelen volt.</div>\n";
-                    break;
-            }
-        }
-
-        ?>
         <div id="question_form">
             <form name="question_form" method="get" action="uploadquestion.php">
                 <table cellpadding="5" cellspacing="5">
@@ -104,7 +89,22 @@
                     </tr>
                 </table>
             </form>
+            <?php
 
+            /* see if any statement was sent to this page through the GET method */
+            if (isset($_GET['success'])) {
+                switch ($_GET['success']) {
+                    case "true":
+                        echo "<div id='failure'>A kérdésbevitel sikeres volt.</div>\n";
+                        break;
+
+                    case "false":
+                        echo "<div id='failure'>A kérdésbevitel sikertelen volt.</div>\n";
+                        break;
+                }
+            }
+
+            ?>
         </div>
     </div>
     <!-- SITE CONTENT END -->

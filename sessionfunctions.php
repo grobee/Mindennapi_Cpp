@@ -1,7 +1,7 @@
 <?php
 
 /* Needed for logout */
-if (isset($_GET['logout'])) {
+if(isset($_GET['logout'])){
     logoutFromSession();
 }
 
