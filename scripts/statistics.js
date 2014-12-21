@@ -42,7 +42,7 @@ $(document).ready(function(){
 
     var loadData = function(obj) {
         $.ajax({
-            url: 'ReadQuestionList.php?bottom=' + limit.bottom + '&number=' + limit.number,
+            url: 'ReadAnswerList.php?bottom=' + limit.bottom + '&number=' + limit.number,
             type: "GET",
             cache: false,
             success: function (html) {
@@ -94,6 +94,10 @@ $(document).ready(function(){
         }
     };
 
+    /* define the starting position */
+    nextBtn.style.display = "none";
+    prevBtn.style.display = "none";
+    /* initialize the questions */
     questionTable.html(loadingImg.html());
     setTableWidth(true);
     initFunction();

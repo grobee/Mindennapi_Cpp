@@ -94,6 +94,10 @@ $(document).ready(function(){
        }
     };
 
+    /* define the starting position */
+    nextBtn.style.display = "none";
+    prevBtn.style.display = "none";
+    /* initialize the questions */
     questionTable.html(loadingImg.html());
     setTableWidth(true);
     initFunction();
