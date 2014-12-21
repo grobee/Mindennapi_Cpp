@@ -25,6 +25,22 @@
         <p>
             Az alábbi oldal segítségével új kérdések tölthetőek fel az adatbázisba
         </p>
+        <?php
+
+        /* see if any statement was sent to this page through the GET method */
+        if (isset($_GET['success'])) {
+            switch ($_GET['success']) {
+                case "true":
+                    echo "<div id='failure' class='success'>A kérdésbevitel sikeres volt.</div>\n";
+                    break;
+
+                case "false":
+                    echo "<div id='failure' class='fail'>A kérdésbevitel sikertelen volt.</div>\n";
+                    break;
+            }
+        }
+
+        ?>
 
         <div id="question_form">
             <form name="question_form" method="get" action="uploadquestion.php">
@@ -89,23 +105,7 @@
                     </tr>
                 </table>
             </form>
-            <?php
-
-            /* see if any statement was sent to this page through the GET method */
-            if (isset($_GET['success'])) {
-                switch ($_GET['success']) {
-                    case "true":
-                        echo "<div id='failure'>A kérdésbevitel sikeres volt.</div>\n";
-                        break;
-
-                    case "false":
-                        echo "<div id='failure'>A kérdésbevitel sikertelen volt.</div>\n";
-                        break;
-                }
-            }
-
-            ?>
-        </div>
+           </div>
     </div>
     <!-- SITE CONTENT END -->
 </div>

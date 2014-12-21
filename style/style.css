@@ -26,3 +26,6 @@ h1, h2, h3, h4, h5,h6 { font-weight:normal; }
 /*---------------------------- table buttons ----------------------------------*/
 .listButton { cursor: pointer; padding: 5px 10px 5px 10px; margin: 5px 5px 0 0; border: 0; color: white; background-color: transparent; }
 #listButtons { margin-top: 20px; background-color: #444444; display: inline-block; }
+/*---------------------------- returned information ----------------------------------*/
+.success { background-color: #4bbb28; color: #FFFFFF; text-align: center; padding: 10px; }
+.fail { background-color: #FF3300; color: #FFFFFF;  text-align: center; padding: 10px; }

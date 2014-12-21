@@ -4,8 +4,8 @@ $(document).ready(function(){
     var firstTime = true;
     var limit = { bottom: 0, number: 15 };
     var loadingImg = $('#loading_div');
-    var nextBtn = document.getElementsByClassName('listButton')[0];
-    var prevBtn = document.getElementsByClassName('listButton')[1];
+    var nextBtn = document.getElementsByClassName('listButton')[1];
+    var prevBtn = document.getElementsByClassName('listButton')[0];
 
     var initFunction = function(){
         questionTable.html(loadingImg.html());

@@ -31,8 +31,8 @@ require_once("sessionfunctions.php");
                 Ezenkívül még lehetőség van új kérdése hozzáadására, ezáltal bővítve a már meglévő feladatok számát.</p>
 
             <div id="listButtons">
-                <button class="listButton">Következő</button>
                 <button class="listButton">Előző</button>
+                <button class="listButton">Következő</button>
             </div>
 
             <div id="loading_div"><img id="question_table_img" width="32" height="32" alt="loading..." src="images/loading.gif" /></div>

@@ -34,8 +34,8 @@
             <div id="chartContainer"></div>
 
             <div id="listButtons">
-                <button class="listButton">Következő</button>
                 <button class="listButton">Előző</button>
+                <button class="listButton">Következő</button>
             </div>
 
             <div id="loading_div"><img id="question_table_img" width="32" height="32" alt="loading..." src="images/loading.gif" /></div>
