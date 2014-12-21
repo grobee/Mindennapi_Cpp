@@ -191,8 +191,8 @@ ALTER TABLE `administrators`
 -- Constraints for table `answers`
 --
 ALTER TABLE `answers`
-  ADD CONSTRAINT `fk_answers_questions` FOREIGN KEY (`id_question`) REFERENCES `questions` (`id_question`),
-  ADD CONSTRAINT `fk_answers_members` FOREIGN KEY (`id_member`) REFERENCES `users` (`id_member`);
+  ADD CONSTRAINT `fk_answers_questions` FOREIGN KEY (`id_question`) REFERENCES `questions` (`id_question`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_answers_members` FOREIGN KEY (`id_member`) REFERENCES `users` (`id_member`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `users`
