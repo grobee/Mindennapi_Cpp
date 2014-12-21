@@ -4,7 +4,7 @@
 #questions_table table thead { background-color: #444444; color: #fff; }
 #questions_table table a { text-decoration: none; }
 #questions_table p { display: block; margin-left: 40%; }
-#question_table_img { display: block; margin-left: 50%; margin-top: 20%; }
+#question_table_img { display: block; margin-left: 50%; margin-top: 10%; }
 #even_table_row { text-align: left; }
 #odd_table_row  { text-align: left; background-color: #286C2B; color: #fff; }
 #odd_table_row a { color: #fff; }
