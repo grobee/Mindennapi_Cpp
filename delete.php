@@ -1,9 +1,5 @@
 <?php
 
-/**
- * @author Gulyás Róbert
- */
-
 require_once("sessionfunctions.php");
 require_once('dbconfig.php');
 checkSessionAndDisplay();

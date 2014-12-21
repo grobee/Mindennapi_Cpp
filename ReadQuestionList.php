@@ -15,14 +15,27 @@ $number = $mysqli->real_escape_string($_GET['number']);
 $qList->populate($bottom, $number);
 /* var_dump($qArray); */
 
+if(!$qList->getQuestions()->count()){
+    echo "<p>Még egy kérdés sem található meg az adatbázisban.</p>";
+    echo "<table>
+            <tfoot id='add_new_question_row'>
+                <td colspan='9'>
+                    <a href='addquestion.php'>+ új kérdés hozzáadása</a>
+                </td>
+            </tfoot>
+         </table>";
+
+    exit();
+}
+
 /* tablazat */
 echo "<table cellpadding='6'>";
 echo "<thead>
         <th>Kérdés szövege</th><th>Válasz 1</th><th>Válasz 2</th><th>Válasz 3</th><th>Válasz 4</th><th>Helyes</th><th>Nehézség</th><th colspan='2'></th>
       </thead>";
 
-/**@var Question $question */
 $i = 0;
+
 foreach ($qList->getQuestions() as $question) {
     if($i % 2 == 0)
         echo "<tr id='even_table_row'>";
@@ -39,7 +52,7 @@ foreach ($qList->getQuestions() as $question) {
                             </a></td>
                             <td><a href='delete.php?id=".$question->id."'>
                                     <img alt='delete icon' width='32' height='32' src='images/adminpanel/delete_icon_light.png' />
-                                </a></td>";
+                            </a></td>";
     }
     else {
         echo "
@@ -48,7 +61,7 @@ foreach ($qList->getQuestions() as $question) {
                             </a></td>
                             <td><a href='delete.php?id=".$question->id."'>
                                     <img alt='delete icon' width='32' height='32' src='images/adminpanel/delete_icon_dark.png' />
-                                </a></td>";
+                            </a></td>";
     }
 
     echo "</tr>";
