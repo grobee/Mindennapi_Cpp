@@ -1,0 +1,21 @@
+#container {
+    width: 350px;
+}
+
+#logintable {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.input_button {
+    background-color: #286C2B;
+    border: 0;
+    color: #fff;
+    padding: 10px 25px 10px 25px;
+    cursor: pointer;
+}
+
+#loginbutton {
+    margin:20px;
+    text-align: center;
+}
