@@ -42,7 +42,22 @@ $question = new Question($row['id_question'], $row['question'], $row['answer_1']
         <p>
             Az alábbi oldal segítségével az adatbázisban már megtalálható kérdések módosíthatóak.
         </p>
+        <?php
 
+        /* see if any statement was sent to this page through the GET method */
+        if(isset($_GET['success'])){
+            switch($_GET['success']){
+                case "true":
+                    echo "<div id='failure' class='success'>A kérdésmódosítás sikeres volt.</div>\n";
+                    break;
+
+                case "false":
+                    echo "<div id='failure' class='fail'>A kérdésmódosítás sikertelen volt.</div>\n";
+                    break;
+            }
+        }
+
+        ?>
         <div id="editor_form">
             <form name="edit_form" action="edit.php">
                 <table cellpadding="5" cellspacing="5">
@@ -145,22 +160,7 @@ $question = new Question($row['id_question'], $row['question'], $row['answer_1']
                 </table>
                 <input type="hidden" name="mod" value="<?php echo $question->id ?>" />
             </form>
-            <?php
 
-            /* see if any statement was sent to this page through the GET method */
-            if(isset($_GET['success'])){
-                switch($_GET['success']){
-                    case "true":
-                        echo "<div id='failure'>A kérdésmódosítás sikeres volt.</div>\n";
-                        break;
-
-                    case "false":
-                        echo "<div id='failure'>A kérdésmódosítás sikertelen volt.</div>\n";
-                        break;
-                }
-            }
-
-            ?>
         </div>
     </div>
     <!-- SITE CONTENT END -->

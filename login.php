@@ -31,7 +31,7 @@ if (isset($_POST['pass'])) {
 <head lang="en">
     <meta charset="UTF-8">
     <title>Bejelentkezés</title>
-    <link rel="shortcut icon" href="images/logo_tab.png" />
+    <link rel="shortcut icon" href="images/logo_tab.png"/>
     <link rel="stylesheet" href="style/style.css"/>
     <link rel="stylesheet" href="style/login.css"/>
 </head>
@@ -56,43 +56,41 @@ if (isset($_POST['pass'])) {
         </table>
 
         <div id="loginbutton">
-        <input class="input_button" type="submit" name="login" value="Bejelentkezés">
+            <input class="input_button" type="submit" name="login" value="Bejelentkezés">
 
         </div> <?php
         /* Check does the username password combo exist, and redirects to the adminpanel page */
         if (isset($username) && isset($pass)) {
-        $salt = "vts";
+            $salt = "vts";
 
-        $username = $sql->escape_string($username);
-        $pass = $sql->escape_string($pass);
-        $result = $sql->query("SELECT passwd FROM members m INNER JOIN administrators a ON m.id_member = a.id_member WHERE m.username = '$username'");
-        /* see if there is a match */
-        if ($result->num_rows > 0) {
-        $name = $result->fetch_assoc();
-        if (md5($salt . $pass . $salt) == $name['passwd']) {
+            $username = $sql->escape_string($username);
+            $pass = $sql->escape_string($pass);
+            $result = $sql->query("SELECT passwd FROM members m INNER JOIN administrators a ON m.id_member = a.id_member WHERE m.username = '$username'");
+            /* see if there is a match */
+            if ($result->num_rows > 0) {
+                $name = $result->fetch_assoc();
+                if (md5($salt . $pass . $salt) == $name['passwd']) {
 
-        session_start();
-        $_SESSION['username'] = $username;
+                    session_start();
+                    $_SESSION['username'] = $username;
 
-        $_SESSION['pass'] = md5($salt . $pass . $salt);
-        $_SESSION['session_use'] = 1;
+                    $_SESSION['pass'] = md5($salt . $pass . $salt);
+                    $_SESSION['session_use'] = 1;
 
-        header("Location:adminpanel.php");
+                    header("Location:adminpanel.php");
 
-        } else {
-        echo " &nbsp;&nbsp; <span style=\"color:red\">Hibás felhasználónév vagy jelszó\n\n\n";
-        echo "<br><br>";
-        }
-        } else {
-        echo " &nbsp;&nbsp; <span style=\"color:red\">Hibás felhasználónév vagy jelszó\n\n\n";
-        echo "<br><br>";
-        }
+                } else {
+                    echo "<div id='failure' class='fail'>Hibás felhasználónév vagy jelszó</div>\n";
+                }
+            } else {
+                echo "<div id='failure' class='fail'>Hibás felhasználónév vagy jelszó</div>\n";
+            }
         }
 
         ?>
 
 
-</div>
+    </div>
 </form>
 <!--SITE CONTENT END-->
 <div id="footer">

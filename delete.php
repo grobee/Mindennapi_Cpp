@@ -1,11 +1,15 @@
 <?php
 
+/**
+ * @author Gulyás Róbert
+ */
+
 require_once("sessionfunctions.php");
 require_once('dbconfig.php');
 checkSessionAndDisplay();
 
 /* if no id is given */
-if(!isset($_GET['id']) || empty($_GET['id']))
+if (!isset($_GET['id']) || empty($_GET['id']))
     header("Location:adminpanel.php");
 
 $id = $sql->escape_string($_GET['id']);
@@ -13,7 +17,7 @@ $id = $sql->escape_string($_GET['id']);
 /* see if the given question exists */
 $result = $sql->query("SELECT id_question FROM questions WHERE id_question = $id");
 
-if($result->num_rows == 0)
+if ($result->num_rows == 0)
     header("Location: adminpanel.php?success=false");
 
 /* delete the question */

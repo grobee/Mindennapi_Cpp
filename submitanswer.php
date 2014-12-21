@@ -61,4 +61,4 @@ $mysql_date_now = date("Y-m-d");
 //echo("INSERT INTO answers (id_question, correct, date, id_member)" . "VALUES ('$id_question', '$bool_correct', '$mysql_date_now', '$id_member');");
 
 $sql->query("SET NAMES UTF8");
-$sql->query("INSERT INTO answers (id_question, correct, date, id_member) VALUES ('$id_question', '$bool_correct', '$mysql_date_now', '$id_member')");
+$sql->query("INSERT INTO answers (id_question, correct, date, id_member)" . "VALUES ('$id_question', '$bool_correct', '$mysql_date_now', '$id_member');");
