@@ -24,6 +24,8 @@ $question = new Question($row['id_question'], $row['question'], $row['answer_1']
     <link rel="shortcut icon" href="images/logo_tab.png" />
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/editor.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/submitcheck.js"></script>
 </head>
 <body>
 <?php checkSessionAndDisplay(); ?>
@@ -155,7 +157,7 @@ $question = new Question($row['id_question'], $row['question'], $row['answer_1']
                     <!-- EIGHT ROW -->
                     <tr id="input_buttons_tr">
                         <td colspan="2" align="center">
-                            <input class="input_button" type="submit" value="Módosítás" />
+                            <input id="btn_submit" class="input_button" type="submit" value="Módosítás" />
                         </td>
                     </tr>
                 </table>

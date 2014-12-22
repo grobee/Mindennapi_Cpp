@@ -7,6 +7,8 @@
     <link rel="shortcut icon" href="images/logo_tab.png" />
     <link rel="stylesheet" type="text/css" href="style/style.css"/>
     <link rel="stylesheet" type="text/css" href="style/addquestion.css"/>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/submitcheck.js"></script>
 </head>
 <body>
 <?php checkSessionAndDisplay(); ?>
@@ -100,7 +102,7 @@
                     <!-- EIGHT ROW -->
                     <tr id="input_buttons_tr">
                         <td colspan="2" align="center">
-                            <input class="input_button" type="submit" value="Elküldés"/>
+                            <input  id="btn_submit" class="input_button" type="submit" value="Elküldés"/>
                         </td>
                     </tr>
                 </table>
