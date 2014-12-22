@@ -85,7 +85,7 @@ $(document).ready(function(){
 
     var loadNumOfRows = function(offset, obj){
         if(offset < 0) offset = parseInt(limit.bottom - Math.abs(offset));
-        else offset = limit.bottom + offset;
+        else offset = parseInt(limit.bottom + offset);
 
         $.ajax({
             url: "php/GetNumOfRows.php?bottom=" + offset + "&number=" + limit.number + "&type=questions",

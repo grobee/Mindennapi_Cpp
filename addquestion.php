@@ -72,6 +72,11 @@
                         <td align="right"><label for="text_input5">Negyedik válasz</label></td>
                         <td><textarea class="text_input" type="text" name="answer4"></textarea></td>
                     </tr>
+                    <!-- ASD ROW -->
+                    <tr>
+                        <td align="right"><label for="text_input5">Sorszám</label></td>
+                        <td><textarea class="text_input" type="text" name="number"></textarea></td>
+                    </tr>
                     <!-- SIXTH ROW -->
                     <tr>
                         <td align="right"><label for="correct_answer">Helyes válasz</label></td>

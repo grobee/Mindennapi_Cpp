@@ -11,9 +11,10 @@ class Question
     public $answer4;
     public $correctAnswer;
 	public $difficulty;
+    public $number;
 
     /* constructor, create a question */
-    public function __construct($id = null, $question = null, $ans1 = null, $ans2 = null, $ans3 = null, $ans4 = null, $correctAnswer = null, $diff = null)
+    public function __construct($id = null, $question = null, $ans1 = null, $ans2 = null, $ans3 = null, $ans4 = null, $correctAnswer = null, $diff = null, $number = null)
     {
         /* question attributes */
         $this->id = $id;
@@ -24,5 +25,6 @@ class Question
         $this->answer4 = $ans4;
         $this->correctAnswer = $correctAnswer;
 		$this->difficulty = $diff;
+        $this->number = $number;
     }
 }

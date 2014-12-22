@@ -31,7 +31,7 @@ if(!$qList->getQuestions()->count()){
 /* tablazat */
 echo "<table cellpadding='6'>";
 echo "<thead>
-        <th>Kérdés szövege</th><th>Válasz 1</th><th>Válasz 2</th><th>Válasz 3</th><th>Válasz 4</th><th>Helyes</th><th>Nehézség</th><th colspan='3'></th>
+        <th>Sr.</th><th>Kérdés szövege</th><th>Válasz 1</th><th>Válasz 2</th><th>Válasz 3</th><th>Válasz 4</th><th>Helyes</th><th>Nehézség</th><th colspan='3'></th>
       </thead>";
 
 $i = 0;
@@ -42,7 +42,7 @@ foreach ($qList->getQuestions() as $question) {
     else
         echo "<tr id='odd_table_row'>";
 
-    echo "<td>" . $question->question . "</td><td>" . $question->answer1 . "</td><td>" . $question->answer2 . "</td>
+    echo "<td>".$question->number."</td><td>" . $question->question . "</td><td>" . $question->answer1 . "</td><td>" . $question->answer2 . "</td>
                     <td>" . $question->answer3 . "</td><td>" . $question->answer4 . "</td><td>" . $question->correctAnswer . "</td><td>" . $question->difficulty . "</td>";
 
     if($i % 2 == 0){
@@ -76,7 +76,7 @@ foreach ($qList->getQuestions() as $question) {
 
 echo "
                     <tfoot id='add_new_question_row'>
-                        <td colspan='10'>
+                        <td colspan='11'>
                             <a href='addquestion.php'>+ új kérdés hozzáadása</a>
                         </td>
                     </tfoot>";

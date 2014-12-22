@@ -12,7 +12,7 @@ $corrAnsNumber = null;
 
 /* check does the upload conains empty parameters */
 if (trim($_GET["question"]) == "" OR trim($_GET["answer1"]) == "" OR trim($_GET["answer2"]) == "" OR
-    trim($_GET["answer3"]) == "" OR trim($_GET["answer4"]) == "" OR trim($_GET["correct_answer"]) == "" OR trim($_GET["difficulty"]) == ""
+    trim($_GET["answer3"]) == "" OR trim($_GET["answer4"]) == "" OR trim($_GET["correct_answer"]) == "" OR trim($_GET["difficulty"]) == "" || trim($_GET['number']) == ""
 ) {
     header("Location: addquestion.php?success=false");
 } else {
@@ -31,6 +31,8 @@ if (trim($_GET["question"]) == "" OR trim($_GET["answer1"]) == "" OR trim($_GET[
         $corrAnsNumber = $sql->escape_string($_GET["correct_answer"]);
     if (isset($_GET["difficulty"]))
         $question->difficulty = $sql->escape_string($_GET["difficulty"]);
+    if (isset($_GET["number"]))
+        $question->number = $sql->escape_string($_GET["number"]);
 
     /* determine the correct answer */
     switch ($corrAnsNumber) {
@@ -48,10 +50,15 @@ if (trim($_GET["question"]) == "" OR trim($_GET["answer1"]) == "" OR trim($_GET[
             break;
     }
 
+    if($sql->query("SELECT id_question FROM questions WHERE number = $question->number")->num_rows > 0){
+        header("Location: addquestion.php?success=false");
+        exit();
+    }
+
     /* insert the question into the DB */
     $sql->query("SET NAMES UTF8");
-    $sql->query("INSERT INTO questions (question, answer_1, answer_2, answer_3, answer_4, correct_answer, difficulty)" .
-        "VALUES ('$question->question', '$question->answer1', '$question->answer2', '$question->answer3', '$question->answer4', '$question->correctAnswer', '$question->difficulty');");
+    $sql->query("INSERT INTO questions (question, answer_1, answer_2, answer_3, answer_4, correct_answer, difficulty, number)" .
+        "VALUES ('$question->question', '$question->answer1', '$question->answer2', '$question->answer3', '$question->answer4', '$question->correctAnswer', '$question->difficulty', '$question->number');");
 
     /* see if the insertion was successful */
     if ($sql->query("SELECT id_question FROM questions WHERE question = '$question->question' AND correct_answer = '$question->correctAnswer';")->num_rows > 0)
