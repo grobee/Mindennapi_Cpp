@@ -23,6 +23,10 @@ echo "<thead>
       </thead>";
 
 foreach ($statistics->getFullList() as $answer) {
+    if(isset($_GET['qid'])) {
+        if($_GET['qid'] != $answer['id_question']) continue;
+    }
+
     if($i % 2 == 0) echo "<tr id='even_table_row'>";
     else echo "<tr id='odd_table_row'>";
 
@@ -32,6 +36,9 @@ foreach ($statistics->getFullList() as $answer) {
     echo "</tr>";
     ++$i;
 }
-
 echo "</table>";
+
+if($i == 0) {
+    echo "<p>Erre a kérdésre még senki sem válaszolt.</p>";
+}
 $mysqli->close();

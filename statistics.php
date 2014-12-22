@@ -15,7 +15,7 @@ class Statistics {
         $this->bottom = $bottom;
         $this->number = $number;
 
-        $this->query = "SELECT a.correct AS 'correct', a.date AS 'date', CONCAT(m.forename, ' ', m.surname) AS 'name',
+        $this->query = "SELECT q.id_question AS 'id_question', a.correct AS 'correct', a.date AS 'date', CONCAT(m.forename, ' ', m.surname) AS 'name',
             q.question AS 'question', q.difficulty AS 'difficulty' FROM answers a INNER JOIN members m ON a.id_member = m.id_member
             INNER JOIN questions q ON a.id_question = q.id_question ORDER BY a.date DESC";
 

@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="style/qstats.css"/>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="scripts/canvasjs.min.js"></script>
+    <script src="scripts/qstats.js"></script>
     <script type="text/javascript" src="scripts/chart.js"></script>
     <?php require('dbconfig.php'); ?>
     <?php require('QuestionList.php'); ?>
@@ -32,37 +33,22 @@
             </p>
 
             <div id="chartContainer"></div>
-            <div id="questions_table">
-                <?php
 
-                if(isset($_GET['id'])) $q_id = $mysqli->escape_string($_GET['id']);
-                else {
-                    echo "<p>Hiányzó vagy helytelen ID.</p>\n";
-                    exit();
-                }
-
-                $qList = new \Robert\QuestionList($mysqli);
-                $qList->populate();
-
-                $data = $qList->getQuestion($q_id);
-                if($data == null) {
-                    echo "<p>Nem létező kérdés.</p>";
-                    exit();
-                }
-
-                echo "<table>\n";
-                echo "\t\t<thead>
-                        \t<th>Kérdés szövege</th>\n \t\t\t<th>Helyes válasz</th>\n \t\t\t<th>Nehézség</th>
-                      </thead>";
-                echo "\n \t\t<tr>
-                        <td>".$data->question."</td>\n \t\t<td>".$data->correctAnswer."</td>\n \t\t<td>".$data->difficulty."</td>\n
-                      </tr>\n";
-                echo "\t</table>\n";
-
-                ?>
+            <div id="listButtons">
+                <button class="listButton">Előző</button>
+                <button class="listButton">Következő</button>
             </div>
 
+            <div id="loading_div"><img id="question_table_img" width="32" height="32" alt="loading..." src="images/loading.gif" /></div>
+            <div id="questions_table2"></div>
+
             <?php
+
+            if(isset($_GET['id'])) $q_id = $mysqli->escape_string($_GET['id']);
+            else {
+                echo "<p>Hiányzó vagy helytelen ID.</p>\n";
+                exit();
+            }
 
             $statistics = new Statistics($mysqli);
             $correctCount = $statistics->getQuestionCorrectPercentage($q_id);
@@ -70,6 +56,7 @@
 
             echo "<div class='hidden'>$correctCount</div>";
             echo "<div class='hidden'>$incorrectCount</div>";
+            echo "<div id='valamid' class='hidden'>$q_id</div>"
 
             ?>
         </div>
