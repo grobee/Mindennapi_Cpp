@@ -37,6 +37,16 @@ require_once("sessionfunctions.php");
 
             <div id="loading_div"><img id="question_table_img" width="32" height="32" alt="loading..." src="images/loading.gif" /></div>
             <div id="questions_table"></div>
+
+            <div class="hidden">0</div>
+            <div class="hidden">15</div>
+            <?php
+
+            if(isset($_GET['bottom'])){
+                echo "<div class=\"hidden\">".$_GET['bottom']."</div>";
+            }
+
+            ?>
         </div>
     </div>
     <div id="footer">

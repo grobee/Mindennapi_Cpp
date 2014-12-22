@@ -20,4 +20,10 @@ if($result->num_rows == 0)
 $sql->query("DELETE FROM questions WHERE id_question = $id");
 $sql->close();
 
+
+if(isset($_GET['bottom'])){
+    header("Location:adminpanel.php?success=siker&bottom=".$_GET['bottom']);
+    exit();
+}
+
 header("Location:adminpanel.php?success=siker");

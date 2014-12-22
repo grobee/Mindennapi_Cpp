@@ -53,7 +53,7 @@ foreach ($qList->getQuestions() as $question) {
             <td><a title='szerkesztés' href='editor.php?id=".$question->id."'>
                 <img alt='edit icon' width='32' height='32' src='images/adminpanel/edit_icon_dark.png' />
             </a></td>
-            <td><a title='törlés' href='delete.php?id=".$question->id."'>
+            <td><a class='delete_btn' title='törlés' href='delete.php?id=".$question->id."'>
                 <img alt='delete icon' width='32' height='32' src='images/adminpanel/delete_icon_light.png' />
             </a></td>";
     }
@@ -65,7 +65,7 @@ foreach ($qList->getQuestions() as $question) {
             <td><a title='szerkesztés' href='editor.php?id=".$question->id."'>
                 <img alt='edit icon' width='32' height='32' src='images/adminpanel/edit_icon_light.png' />
             </a></td>
-            <td><a title='törlés' href='delete.php?id=".$question->id."'>
+            <td><a class='delete_btn' title='törlés' href='delete.php?id=".$question->id."'>
                 <img alt='delete icon' width='32' height='32' src='images/adminpanel/delete_icon_dark.png' />
             </a></td>";
     }
