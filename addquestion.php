@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>Új kérdés bevitele</title>
+    <title>Új kérdés</title>
     <link rel="shortcut icon" href="images/logo_tab.png" />
     <link rel="stylesheet" type="text/css" href="style/style.css"/>
     <link rel="stylesheet" type="text/css" href="style/addquestion.css"/>
@@ -18,7 +18,7 @@
         <div id="innerheader" class="sitecenter">
             <img src="images/logo_small.png" width="100" height="75" alt="logo"/>
             <a href="adminpanel.php"> Kérdések </a>
-            <a href="statisticsPage.php"> Statisztika </a>
+            <a href="logpage.php"> Naplózás </a>
         </div>
     </div>
 

@@ -1,9 +1,4 @@
 <?php
-/**
- * User: Róbert
- * Date: 2014-10-31
- * Time: 20:00
- */
 
 /* see if logged in */
 require_once("sessionfunctions.php");

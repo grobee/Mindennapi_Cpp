@@ -38,4 +38,12 @@ class QuestionList {
     public function getQuestions(){
         return $this->questions;
     }
+
+    public function getQuestion($id){
+        foreach($this->questions as $question){
+            if($question->id == $id) return $question;
+        }
+
+        return false;
+    }
 }
