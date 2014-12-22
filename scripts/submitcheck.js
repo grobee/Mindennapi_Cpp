@@ -20,6 +20,9 @@ $(document).ready(function() {
     textAreaList[4].onfocus = function() {
         textAreaList[4].style.border = "2px solid #286C2B";
     };
+    textAreaList[5].onfocus = function() {
+        textAreaList[5].style.border = "2px solid #286C2B";
+    };
 
     function validation() {
         try {
