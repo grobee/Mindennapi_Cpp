@@ -47,11 +47,11 @@ if (isset($_POST['pass'])) {
         <table id="logintable" cellpadding="5" align="center">
             <tr>
                 <td><label>Felhasználónév:</label></td>
-                <td><input type="text" name="username" size="25" maxlength="30"></td>
+                <td><input class="input_login_text" type="text" name="username" size="25" maxlength="30"></td>
             </tr>
             <tr>
                 <td align="right"><label>Jelszó:</label></td>
-                <td><input type="password" name="pass" size="25" maxlength="30"></td>
+                <td><input class="input_login_text" type="password" name="pass" size="25" maxlength="30"></td>
             </tr>
         </table>
 
