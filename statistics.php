@@ -30,6 +30,30 @@ class Statistics {
     public function getFullList() { return $this->data; }
     public function getNumberOfRows() { return $this->sql->query($this->query)->num_rows; }
 
+    public function getQuestionCorrectPercentage($id){
+        $query = "SELECT id_question FROM answers WHERE id_question = $id";
+        $totalC = $this->sql->query($query)->num_rows;
+
+        $query = "SELECT id_question FROM answers WHERE correct = 1 AND id_question = $id";
+        $correctC = $this->sql->query($query)->num_rows;
+
+        if($totalC == 0) return 0;
+
+        return number_format(($correctC / $totalC) * 100, 2);
+    }
+
+    public function getQuestionIncorrectPercentage($id){
+        $query = "SELECT id_question FROM answers WHERE id_question = $id";
+        $totalC = $this->sql->query($query)->num_rows;
+
+        $query = "SELECT id_question FROM answers WHERE correct = 0 AND id_question = $id";
+        $incorrectC = $this->sql->query($query)->num_rows;
+
+        if($totalC == 0) return 0;
+
+        return number_format(($incorrectC / $totalC) * 100, 2);
+    }
+
     private function countCorrect(){
         foreach($this->data as $answer){
             $answer['correct'] == 1 ? $this->correct_count++ : $this->incorrect_count++;
