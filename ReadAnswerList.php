@@ -15,6 +15,7 @@ if(!$statistics->getFullList()->count()){
 /* tablazat */
 echo "<table cellpadding='10'>";
 echo "<thead>
+        <th>Sr.</th>
         <th>Kérdés</th>
         <th>Helyesség</th>
         <th>Név</th>
@@ -30,7 +31,7 @@ foreach ($statistics->getFullList() as $answer) {
     if($i % 2 == 0) echo "<tr id='even_table_row'>";
     else echo "<tr id='odd_table_row'>";
 
-    echo "<td>" . $answer['question'] . "</td><td>" . ($answer['correct'] == 1 ? "helyes" : "helytelen") . "</td><td>" . $answer['name'] . "</td>
+    echo "<td>" . $answer['number'] . " </td><td>" . $answer['question'] . "</td><td>" . ($answer['correct'] == 1 ? "helyes" : "helytelen") . "</td><td>" . $answer['name'] . "</td>
             <td>" . $answer['date'] . "</td><td>" . $answer['difficulty'] . "</td>";
 
     echo "</tr>";
