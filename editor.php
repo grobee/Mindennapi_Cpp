@@ -54,7 +54,7 @@ $question = new Question($row['id_question'], $row['question'], $row['answer_1']
                     break;
 
                 case "false":
-                    echo "<div id='failure' class='success'>A kérdésmódosítás sikertelen volt.</div>\n";
+                    echo "<div id='failure' class='fail'>A kérdésmódosítás sikertelen volt.</div>\n";
                     break;
             }
         }

@@ -10,8 +10,8 @@ $id = null;
 $mod_question = new Question();
 
 /* check does the upload conains empty parameters */
-if (empty($_GET["mod_question"]) OR empty($_GET["mod_answer1"]) OR empty($_GET["mod_answer2"]) OR
-    empty($_GET["mod_answer3"]) OR empty($_GET["mod_answer4"]) OR empty($_GET["mod_correct_answer"]) OR empty($_GET["mod_difficulty"]) OR empty($_GET["mod"])
+if (trim($_GET["mod_question"]) == "" OR trim($_GET["mod_answer1"]) == "" OR trim($_GET["mod_answer2"]) == "" OR
+    trim($_GET["mod_answer3"]) == "" OR trim($_GET["mod_answer4"]) == "" OR trim($_GET["mod_correct_answer"]) == "" OR trim($_GET["mod_difficulty"]) == "" OR trim($_GET["mod"]) == ""
 ) {
     header("Location: editor.php?id=" . $_GET['mod'] . "&success=false");
 } else {
@@ -51,44 +51,44 @@ if (empty($_GET["mod_question"]) OR empty($_GET["mod_answer1"]) OR empty($_GET["
 
     $sql->query("SET NAMES utf8");
     /* modify the values */
-    if (!empty($mod_question->question)) {
+    if ($mod_question->question!="") {
         $sql->query("UPDATE questions SET question = '$mod_question->question' WHERE id_question = $mod_question->id");
         if ($sql->affected_rows == 0)
             header("Location: editor.php?id=$mod_question->id&success=false");
     }
 
-    if (!empty($mod_question->answer1)) {
+    if ($mod_question->answer1!="") {
         $sql->query("UPDATE questions SET answer_1 = '$mod_question->answer1' WHERE id_question = $mod_question->id");
         if ($sql->affected_rows == 0)
             header("Location: editor.php?id=$mod_question->id&success=false");
     }
 
-    if (!empty($mod_question->answer2)) {
+    if ($mod_question->answer2!="") {
         $sql->query("UPDATE questions SET answer_2 = '$mod_question->answer2' WHERE id_question = $mod_question->id");
         if ($sql->affected_rows == 0)
             header("Location: editor.php?id=$mod_question->id&success=false");
     }
 
-    if (!empty($mod_question->answer3)) {
+    if ($mod_question->answer3!="") {
         $sql->query("UPDATE questions SET answer_3 = '$mod_question->answer3' WHERE id_question = $mod_question->id");
         if ($sql->affected_rows == 0)
             header("Location: editor.php?id=$mod_question->id&success=false");
     }
 
-    if (!empty($mod_question->answer4)) {
+    if ($mod_question->answer4!="") {
         $sql->query("UPDATE questions SET answer_4 = '$mod_question->answer4' WHERE id_question = $mod_question->id");
         if ($sql->affected_rows == 0)
             header("Location: editor.php?id=$mod_question->id&success=false");
     }
 
-    if (!empty($mod_question->correctAnswer)) {
+    if ($mod_question->correctAnswer!="") {
         $sql->query("UPDATE questions SET correct_answer = '$mod_question->correctAnswer' WHERE id_question = $mod_question->id");
         if ($sql->affected_rows == 0)
             header("Location: editor.php?id=$mod_question->id&success=false");
     }
 
 
-    if (!empty($mod_question->difficulty)) {
+    if ($mod_question->difficulty!="") {
         $sql->query("UPDATE questions SET difficulty = '$mod_question->difficulty' WHERE id_question = $mod_question->id");
         if ($sql->affected_rows == 0)
             header("Location: editor.php?id=$mod_question->id&success=false");

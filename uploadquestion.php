@@ -11,8 +11,8 @@ $question = new Question();
 $corrAnsNumber = null;
 
 /* check does the upload conains empty parameters */
-if (empty($_GET["question"]) OR empty($_GET["answer1"]) OR empty($_GET["answer2"]) OR
-    empty($_GET["answer3"]) OR empty($_GET["answer4"]) OR empty($_GET["correct_answer"]) OR empty($_GET["difficulty"])
+if (trim($_GET["question"]) == "" OR trim($_GET["answer1"]) == "" OR trim($_GET["answer2"]) == "" OR
+    trim($_GET["answer3"]) == "" OR trim($_GET["answer4"]) == "" OR trim($_GET["correct_answer"]) == "" OR trim($_GET["difficulty"]) == ""
 ) {
     header("Location: addquestion.php?success=false");
 } else {
