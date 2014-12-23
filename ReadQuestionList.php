@@ -31,7 +31,7 @@ if(!$qList->getQuestions()->count()){
 /* tablazat */
 echo "<table cellpadding='6'>";
 echo "<thead>
-        <th>Sr.</th><th>Kérdés szövege</th><th>Válasz 1</th><th>Válasz 2</th><th>Válasz 3</th><th>Válasz 4</th><th>Helyes</th><th>Nehézség</th><th colspan='3'></th>
+        <th>Sr.</th><th>Kérdés szövege</th><th>A</th><th>B</th><th>C</th><th>D</th><th>Helyes</th><th>Nehézség</th><th colspan='3'></th>
       </thead>";
 
 $i = 0;
@@ -41,9 +41,29 @@ foreach ($qList->getQuestions() as $question) {
         echo "<tr id='even_table_row'>";
     else
         echo "<tr id='odd_table_row'>";
+        
+$answer1 = $question->answer1;
+$answer2 = $question->answer2;
+$answer3 = $question->answer3;
+$answer4 = $question->answer4;
+$real_correct_num="";
+switch ($question->correctAnswer) {
+    case $answer1 :
+        $real_correct_num="A";
+    break;
+    case $answer2 :
+        $real_correct_num="B";
+        break;
+    case $answer3 :
+        $real_correct_num="C";
+        break;
+    case $answer4 :
+        $real_correct_num="D";
+        break;
 
-    echo "<td>".$question->number."</td><td>" . $question->question . "</td><td>" . $question->answer1 . "</td><td>" . $question->answer2 . "</td>
-                    <td>" . $question->answer3 . "</td><td>" . $question->answer4 . "</td><td>" . $question->correctAnswer . "</td><td>" . $question->difficulty . "</td>";
+}
+    echo "<td id='centeredTd'>".$question->number."</td><td>" . $question->question . "</td><td id='centeredTd'>" . $answer1 . "</td><td id='centeredTd'>" . $answer2 . "</td>
+                    <td id='centeredTd'>" .$answer3. "</td><td id='centeredTd'>" .$answer4. "</td><td id='centeredTd'>" . $real_correct_num . "</td><td id='centeredTd'>" . $question->difficulty . "</td>";
 
     if($i % 2 == 0){
         echo "
